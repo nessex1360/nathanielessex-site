@@ -6,187 +6,253 @@
   <title>Nathaniel Essex — Analytics Lead / Technical PM</title>
   <meta name="description" content="Portfolio of Nathaniel Essex — analytics lead and technical PM. Data pipelines, dashboards, AI agent systems, and the product thinking to make them matter.">
   <meta name="author" content="Nathaniel Essex">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Nathaniel Essex — Analytics Lead / Technical PM">
-  <meta property="og:description" content="Portfolio of Nathaniel Essex — analytics lead and technical PM. Data pipelines, dashboards, AI agent systems, and the product thinking to make them matter.">
+  <meta property="og:description" content="Data pipelines, dashboards, AI agent systems, and the product thinking to make them matter.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nathanielessex.com">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-expression="professional">
+<body>
 
   <!-- NAV -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav-logo">Nathaniel Essex</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="assets/documents/resume.pdf" target="_blank" class="nav-cta">Resume ↓</a></li>
-    </ul>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Nathaniel Essex</a>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="assets/documents/resume.pdf" target="_blank" class="btn-pill btn-pill-white btn-pill-sm">Resume ↓</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-name">
-    <p class="hero-eyebrow">Portfolio</p>
-    <h1 class="hero-name" id="hero-name">Nathaniel Essex</h1>
-    <p class="hero-title">Analytics Lead / Technical PM</p>
-    <div class="hero-divider" aria-hidden="true"></div>
-    <p class="hero-bio">
-      Analytics lead and technical PM closing the loop between data and product — I build the pipelines, models, and AI workflows that turn messy data into revenue decisions. A decade across logistics, fintech, and insurance has produced a pattern: find the real question, size the opportunity, and own the system that acts on it.
-    </p>
-    <!-- PLACEHOLDER: Update bio before DNS cutover. Draft from master-resume.md. -->
-    <div class="hero-actions">
-      <a href="#work" class="paragon-cta">View Work</a>
-      <a href="assets/documents/resume.pdf" target="_blank" class="paragon-cta" style="color: var(--ash-silver); border-color: var(--border-engraved);">Download Resume</a>
+    <div class="hero-inner">
+      <div class="hero-headline" id="hero-name">
+        <span class="hero-word">Nathaniel</span>
+        <span class="hero-word">Essex</span>
+        <span class="hero-pill">Analytics Lead</span>
+        <span class="hero-word">/</span>
+        <span class="hero-word">Technical</span>
+        <span class="hero-word">PM</span>
+      </div>
+      <div class="hero-bottom">
+        <nav class="hero-social" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="mailto:essex@nathanielessex.com">Email</a>
+        </nav>
+        <p class="hero-bio">
+          Analytics lead and technical PM closing the loop between data and product — I build the pipelines, models, and AI workflows that turn messy data into revenue decisions. A decade across logistics, fintech, and insurance has produced a pattern: find the real question, size the opportunity, and own the system that acts on it.
+        </p>
+        <!-- PLACEHOLDER: Update bio before DNS cutover. -->
+      </div>
     </div>
   </section>
 
-  <!-- CASE STUDY CARDS -->
-  <section class="cards-section" id="work" aria-labelledby="work-heading">
-    <p class="section-label" style="padding: 0; margin-bottom: var(--space-7);" id="work-heading">Selected Work</p>
-
-    <div class="cards-grid">
-
-      <!-- PRJ-005 — ANCHOR / FEATURED -->
-      <a href="prj-005/" class="project-card card-featured" aria-label="Case study: AI Agent Product Trio & Custom Skills Library">
-        <span class="card-category">Independent Practice · AI / Product</span>
-        <p class="card-metric">60+</p>
-        <h2 class="card-title">AI Agent Product Trio &amp; Custom Skills Library</h2>
-        <p class="card-desc">Built a multi-agent system that replicates a full product trio (Product, Design, Engineering + QA) — and a library of 60+ custom Claude skills to run it. Solo operator. Full product throughput.</p>
-        <div class="card-tags">
-          <span class="paragon-tag">Claude / AI</span>
-          <span class="paragon-tag">Product Management</span>
-          <span class="paragon-tag">Agent Architecture</span>
-          <span class="paragon-tag">Python</span>
+  <!-- WORKS -->
+  <section class="works-section" aria-labelledby="works-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">
+          <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          <h2 id="works-heading">Selected Work</h2>
         </div>
-        <span class="card-cta">View Case Study →</span>
-      </a>
+        <a href="#contact" class="section-link">Get in touch →</a>
+      </div>
 
-      <!-- PRJ-004 -->
-      <a href="prj-004/" class="project-card" aria-label="Case study: Pricing & Credit Restructuring">
-        <span class="card-category">CargoSprint · Finance / Analytics</span>
-        <p class="card-metric">$10M</p>
-        <h2 class="card-title">Pricing &amp; Credit Restructuring</h2>
-        <p class="card-desc">Identified underpriced high-volume accounts, established minimum profitable rates by product, and restructured credit from user-level to company-level controls.</p>
-        <div class="card-tags">
-          <span class="paragon-tag">Financial Modeling</span>
-          <span class="paragon-tag">SQL</span>
-          <span class="paragon-tag">Python</span>
-        </div>
-        <span class="card-cta">View Case Study →</span>
-      </a>
+      <div class="works-list">
 
-      <!-- PRJ-001 -->
-      <a href="prj-001/" class="project-card" aria-label="Case study: Green Space & Market Share Analysis">
-        <span class="card-category">CargoSprint · Strategy / Analytics</span>
-        <p class="card-metric">3 Days</p>
-        <h2 class="card-title">Cross-Platform Green Space &amp; Market Share Analysis</h2>
-        <p class="card-desc">Merged two post-acquisition customer databases against external freight registries to size upsell, cross-sell, and net-new revenue opportunities — $250K–$1M upside quantified.</p>
-        <div class="card-tags">
-          <span class="paragon-tag">Python</span>
-          <span class="paragon-tag">Market Analysis</span>
-          <span class="paragon-tag">SQL</span>
-        </div>
-        <span class="card-cta">View Case Study →</span>
-      </a>
+        <!-- PRJ-005 — ANCHOR -->
+        <a href="prj-005/" class="project-card" aria-label="Case study: AI Agent Product Trio">
+          <div class="card-image">
+            <div class="card-image-placeholder">Project image</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top">
+              <span class="card-category">Independent Practice · AI / Product</span>
+              <p class="card-metric">60+</p>
+              <h3 class="card-title">AI Agent Product Trio &amp; Custom Skills Library</h3>
+              <p class="card-desc">Built a multi-agent system replicating a full product trio (Product, Design, Engineering + QA) and a library of 60+ custom Claude skills. Solo operator. Full product throughput.</p>
+              <div class="card-tags">
+                <span class="tag">Claude / AI</span>
+                <span class="tag">Product Management</span>
+                <span class="tag">Agent Architecture</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="btn-pill btn-pill-white">View Case Study</span>
+            </div>
+          </div>
+        </a>
 
-      <!-- PRJ-003 -->
-      <a href="prj-003/" class="project-card" aria-label="Case study: Automated Customer Spend Reporting">
-        <span class="card-category">CargoSprint · Engineering / Analytics</span>
-        <p class="card-metric">90%</p>
-        <h2 class="card-title">Automated Customer Spend Reporting Pipeline</h2>
-        <p class="card-desc">Replaced a week of manual work per cycle with a scheduled Python pipeline generating 40+ recurring customer spend reports and a self-serve onboarding UI.</p>
-        <div class="card-tags">
-          <span class="paragon-tag">Python</span>
-          <span class="paragon-tag">Automation</span>
-          <span class="paragon-tag">Excel</span>
-        </div>
-        <span class="card-cta">View Case Study →</span>
-      </a>
+        <!-- PRJ-004 -->
+        <a href="prj-004/" class="project-card" aria-label="Case study: Pricing & Credit Restructuring">
+          <div class="card-image">
+            <div class="card-image-placeholder">Project image</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top">
+              <span class="card-category">CargoSprint · Finance / Analytics</span>
+              <p class="card-metric">$10M</p>
+              <h3 class="card-title">Pricing &amp; Credit Restructuring</h3>
+              <p class="card-desc">Identified underpriced high-volume accounts, established minimum profitable rates by product, and restructured credit from user-level to company-level controls.</p>
+              <div class="card-tags">
+                <span class="tag">Financial Modeling</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="btn-pill btn-pill-white">View Case Study</span>
+            </div>
+          </div>
+        </a>
 
-      <!-- PRJ-002 -->
-      <a href="prj-002/" class="project-card" aria-label="Case study: Enterprise Sales Dashboard">
-        <span class="card-category">CargoSprint · BI / Analytics</span>
-        <p class="card-metric">Daily Use</p>
-        <h2 class="card-title">Enterprise Sales Dashboard (Tableau)</h2>
-        <p class="card-desc">Built the company's primary sales performance dashboard — the single source of truth for revenue trends, new logo growth, and forecast inputs across Sales, Marketing, and Finance.</p>
-        <div class="card-tags">
-          <span class="paragon-tag">Tableau</span>
-          <span class="paragon-tag">SQL</span>
-          <span class="paragon-tag">Data Modeling</span>
-        </div>
-        <span class="card-cta">View Case Study →</span>
-      </a>
+        <!-- PRJ-001 -->
+        <a href="prj-001/" class="project-card" aria-label="Case study: Green Space Analysis">
+          <div class="card-image">
+            <div class="card-image-placeholder">Project image</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top">
+              <span class="card-category">CargoSprint · Strategy / Analytics</span>
+              <p class="card-metric">3 Days</p>
+              <h3 class="card-title">Cross-Platform Green Space &amp; Market Share Analysis</h3>
+              <p class="card-desc">Merged two post-acquisition customer databases against external freight registries to size $250K–$1M in upsell, cross-sell, and net-new revenue opportunities.</p>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Market Analysis</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="btn-pill btn-pill-white">View Case Study</span>
+            </div>
+          </div>
+        </a>
 
+        <!-- PRJ-003 -->
+        <a href="prj-003/" class="project-card" aria-label="Case study: Automated Spend Reporting">
+          <div class="card-image">
+            <div class="card-image-placeholder">Project image</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top">
+              <span class="card-category">CargoSprint · Engineering / Analytics</span>
+              <p class="card-metric">90%</p>
+              <h3 class="card-title">Automated Customer Spend Reporting Pipeline</h3>
+              <p class="card-desc">Replaced a week of manual work per cycle with a scheduled Python pipeline generating 40+ recurring customer spend reports and a self-serve onboarding UI.</p>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Excel</span>
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="btn-pill btn-pill-white">View Case Study</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- PRJ-002 -->
+        <a href="prj-002/" class="project-card" aria-label="Case study: Enterprise Sales Dashboard">
+          <div class="card-image">
+            <div class="card-image-placeholder">Project image</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top">
+              <span class="card-category">CargoSprint · BI / Analytics</span>
+              <p class="card-metric">Daily Use</p>
+              <h3 class="card-title">Enterprise Sales Dashboard (Tableau)</h3>
+              <p class="card-desc">Built the company's primary sales performance dashboard — the single source of truth for revenue trends, new logo growth, and forecast inputs across Sales, Marketing, and Finance.</p>
+              <div class="card-tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Data Modeling</span>
+              </div>
+            </div>
+            <div class="card-bottom">
+              <span class="btn-pill btn-pill-white">View Case Study</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
-
-  <div class="gold-divider"></div>
 
   <!-- RESUME CTA -->
-  <section class="resume-section" aria-labelledby="resume-heading">
-    <div class="resume-copy">
-      <h2 id="resume-heading">Full Background</h2>
-      <p>10+ years across logistics, fintech, benefits, and cannabis — plus an MBA, a Columbia PM certificate, and a bias toward systems that actually ship.</p>
+  <section class="cta-section" aria-labelledby="resume-heading">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-copy">
+          <h2 id="resume-heading">Full Background</h2>
+          <p>10+ years across logistics, fintech, benefits, and cannabis — plus an MBA, a Columbia PM certificate, and a bias toward systems that actually ship.</p>
+        </div>
+        <a href="assets/documents/resume.pdf" target="_blank" class="btn-pill btn-pill-white">Download Resume ↓</a>
+      </div>
     </div>
-    <a href="assets/documents/resume.pdf" target="_blank" class="paragon-cta">Download Resume ↓</a>
   </section>
-
-  <div class="gold-divider"></div>
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Get in Touch</h2>
-    <p class="section-intro">Open to senior analytics, analytics lead, and technical PM roles at streaming, entertainment, and consumer tech companies. If something looks relevant, let's talk.</p>
+    <div class="container">
+      <h2 id="contact-heading">Get in Touch</h2>
+      <p class="contact-intro">Open to senior analytics, analytics lead, and technical PM roles at streaming, entertainment, and consumer tech companies. If something looks relevant, let's talk.</p>
 
-    <form class="contact-form" action="https://formspree.io/f/xgorvbwl" method="POST" novalidate>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
-      </div>
-      <div class="form-group">
-        <label for="company">Company</label>
-        <input type="text" id="company" name="company" placeholder="Where you work" autocomplete="organization">
-      </div>
-      <div class="form-group">
-        <label for="role">Role / Context</label>
-        <input type="text" id="role" name="role" placeholder="e.g. Analytics Manager, Netflix">
-      </div>
-      <div class="form-group full">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="What are you working on?" required></textarea>
-      </div>
-      <div class="form-group full">
-        <button type="submit" class="paragon-cta" style="cursor:pointer; border:none; background:transparent;">Send Message →</button>
-      </div>
-    </form>
+      <form class="contact-form" action="https://formspree.io/f/xgorvbwl" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Where you work" autocomplete="organization">
+        </div>
+        <div class="form-group">
+          <label for="role">Role / Context</label>
+          <input type="text" id="role" name="role" placeholder="e.g. Analytics Manager, Netflix">
+        </div>
+        <div class="form-group full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What are you working on?" required></textarea>
+        </div>
+        <div class="form-group full">
+          <button type="submit" class="btn-pill btn-pill-white" style="width: fit-content; border: none; cursor: pointer;">Send Message →</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
-    <span class="footer-name">Nathaniel A. Essex</span>
-    <ul class="footer-links">
-      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="assets/documents/resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-    <a href="mailto:essex@nathanielessex.com" class="footer-email">essex@nathanielessex.com</a>
+    <div class="footer-inner">
+      <span class="footer-name">Nathaniel A. Essex</span>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="assets/documents/resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+      <a href="mailto:essex@nathanielessex.com" class="footer-email">essex@nathanielessex.com</a>
+    </div>
   </footer>
 
   <script src="js/nav.js"></script>

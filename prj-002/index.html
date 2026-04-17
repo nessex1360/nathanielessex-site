@@ -4,130 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise Sales Dashboard — Nathaniel Essex</title>
-  <meta name="description" content="How a custom Tableau dashboard became the single source of truth for revenue, growth, and forecast across an entire organization. Case study by Nathaniel Essex.">
+  <meta name="description" content="How a custom Tableau dashboard became the single source of truth for revenue, growth, and forecast across an organization.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body data-expression="professional">
+<body>
 
-  <!-- NAV -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav-logo">Nathaniel Essex</a>
-    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="../assets/documents/resume.pdf" target="_blank" class="nav-cta">Resume ↓</a></li>
-    </ul>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Nathaniel Essex</a>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="../assets/documents/resume.pdf" target="_blank" class="btn-pill btn-pill-white btn-pill-sm">Resume ↓</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- CASE STUDY HERO -->
-  <header class="cs-hero" aria-labelledby="cs-title">
-    <a href="/" class="cs-back">← All Work</a>
-    <p class="cs-eyebrow">CargoSprint · BI / Analytics</p>
-    <h1 class="cs-title" id="cs-title">Enterprise Sales Dashboard (Tableau)</h1>
-    <p class="cs-metric-hero">1</p>
-    <p class="cs-metric-label">Source of truth — Sales, Marketing &amp; Finance, used daily</p>
+  <header class="cs-hero-banner" aria-labelledby="cs-title">
+    <div class="cs-hero-banner-img"></div>
+    <div class="cs-hero-banner-overlay"></div>
+    <p class="cs-hero-banner-title" id="cs-title">Enterprise Sales Dashboard (Tableau)</p>
   </header>
 
+  <div class="cs-meta-strip">
+    <div class="cs-meta-inner">
+      <div class="cs-meta-left">
+        <div class="cs-meta-item">
+          <p class="meta-label">Organization</p>
+          <p class="meta-value">CargoSprint / EModal</p>
+        </div>
+        <div class="cs-meta-item">
+          <p class="meta-label">Role</p>
+          <p class="meta-value">Senior Data Analyst</p>
+        </div>
+        <div class="cs-meta-item">
+          <p class="meta-label">Function</p>
+          <p class="meta-value">Sales, Marketing, Finance</p>
+        </div>
+        <div class="cs-meta-item">
+          <p class="meta-label">Timeline</p>
+          <p class="meta-value">2022 – Present</p>
+        </div>
+      </div>
+      <div class="cs-meta-right">
+        <p class="cs-summary">Built the company's primary Tableau dashboard — the single source of truth for revenue trends, new logo growth, and forecast inputs across Sales, Marketing, and Finance. Used daily.</p>
+        <a href="/" class="btn-pill btn-pill-outline" style="width: fit-content;">← All Work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-metric-callout">
+    <div class="cs-metric-inner">
+      <p class="cs-metric-number">Daily Use</p>
+      <p class="cs-metric-desc">Across Sales, Marketing &amp; Finance — the organization's single source of truth</p>
+    </div>
+  </div>
+
   <!-- TABLEAU PLACEHOLDER -->
-  <div style="max-width: var(--max-content); margin: 0 auto; padding: 0 var(--section-pad-x);">
-    <div class="tableau-placeholder">
-      <span>Interactive Dashboard</span>
-      <p class="tableau-note">Tableau Public embed — coming soon. Dashboard built on synthetic data to protect proprietary information.</p>
+  <div class="cs-images">
+    <div class="cs-images-inner">
+      <div class="tableau-placeholder">
+        <p class="tp-label">Interactive Dashboard</p>
+        <p class="tp-note">Tableau Public embed coming soon. Dashboard built on synthetic data to protect proprietary information.</p>
+      </div>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="cs-body">
-
-    <!-- SIDEBAR META -->
-    <aside class="cs-sidebar" aria-label="Project metadata">
-      <div class="cs-meta-item">
-        <h4>Organization</h4>
-        <p>CargoSprint / EModal</p>
-      </div>
-      <div class="cs-meta-item">
-        <h4>Role</h4>
-        <p>Senior Data Analyst</p>
-      </div>
-      <div class="cs-meta-item">
-        <h4>Function</h4>
-        <p>Sales, Marketing, Finance</p>
-      </div>
-      <div class="cs-meta-item">
-        <h4>Timeline</h4>
-        <p>2022 – Present</p>
-      </div>
-    </aside>
-
-    <!-- CONTENT -->
-    <div class="cs-content">
-
-      <section class="cs-section" aria-labelledby="cs-context">
-        <h2 class="cs-section-label" id="cs-context">Context</h2>
+  <section class="cs-content-section" aria-labelledby="cs-context">
+    <div class="cs-content-inner">
+      <p class="cs-section-label">Context</p>
+      <div class="cs-section-body">
         <p>CargoSprint operated across multiple product lines — SprintPay, SprintPass, GIACT, eCheck, Flex Payments, Fee Manager — with customers on both the SprintPay and EModal platforms after the acquisition. Sales, Marketing, and Finance each had their own views of revenue performance, creating inconsistency in how the business was reported, measured, and forecast.</p>
-        <p>Leadership needed one dashboard that everyone could trust. One place to answer: how are we growing, who are the new logos, what does the forecast look like, and where is GMV moving?</p>
-      </section>
+        <p>Leadership needed one dashboard that everyone could trust — one place to answer: how are we growing, who are the new logos, what does the forecast look like, and where is GMV moving?</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="cs-section" aria-labelledby="cs-approach">
-        <h2 class="cs-section-label" id="cs-approach">Approach</h2>
-        <ul>
-          <li>Built and maintained the primary Tableau dashboard for the organization — fed by a custom pipeline querying directly from the production database</li>
-          <li>Designed for multi-department use: time grain toggling (weekly / monthly / quarterly / annual), payor vs. payee sorting, GMV and volume trends by transaction type, source system filtering</li>
-          <li>New logo tracking: identified and surfaced net-new customers by time period, acquisition channel, and product line</li>
-          <li>Facility onboarding metrics: measured time from facility signup to first transaction, enabling operational and sales coordination</li>
-          <li>Iterated the dashboard continuously based on evolving stakeholder needs — added forecast inputs as Finance built out their planning cycle, added segment views as Sales refined its territory model</li>
-        </ul>
-      </section>
-
-      <section class="cs-section" aria-labelledby="cs-outcome">
-        <h2 class="cs-section-label" id="cs-outcome">Outcome</h2>
-        <div class="cs-outcome-box">
-          <p class="outcome-metric">Daily Use</p>
-          <p class="outcome-desc">Across Sales, Marketing, and Finance — the organization's single source of truth for revenue, growth, and forecast</p>
-        </div>
-        <p style="margin-top: var(--space-5);">The dashboard became the organization's primary sales performance and planning artifact — referenced in every revenue review, forecast meeting, and board preparation cycle. Fragmented reporting was replaced by a shared view that all three departments could work from simultaneously.</p>
-        <p>The direct production database connection kept latency low and eliminated the manual extraction step that had previously preceded any revenue analysis.</p>
-      </section>
-
-      <section class="cs-section" aria-labelledby="cs-skills">
-        <h2 class="cs-section-label" id="cs-skills">Skills &amp; Tools</h2>
-        <div class="cs-skills">
-          <span class="paragon-tag">Tableau</span>
-          <span class="paragon-tag">SQL</span>
-          <span class="paragon-tag">MySQL</span>
-          <span class="paragon-tag">GCP</span>
-          <span class="paragon-tag">Data Modeling</span>
-          <span class="paragon-tag">Data Pipelines</span>
-          <span class="paragon-tag">Salesforce</span>
-          <span class="paragon-tag">Business Intelligence</span>
-        </div>
-      </section>
-
+  <div class="cs-images">
+    <div class="cs-images-inner">
+      <div class="cs-image-block">
+        <div class="cs-image-placeholder">Dashboard screenshot — placeholder</div>
+      </div>
     </div>
   </div>
 
-  <!-- CASE STUDY BOTTOM NAV -->
+  <section class="cs-content-section" aria-labelledby="cs-approach">
+    <div class="cs-content-inner">
+      <p class="cs-section-label">Approach</p>
+      <div class="cs-section-body">
+        <ul>
+          <li>Built and maintained the primary Tableau dashboard — fed by a custom pipeline querying directly from the production database</li>
+          <li>Time grain toggling: weekly / monthly / quarterly / annual views; payor vs. payee sorting; GMV and volume trends by transaction type and source system</li>
+          <li>New logo tracking: net-new customers by time period, acquisition channel, and product line</li>
+          <li>Facility onboarding metrics: time from signup to first transaction for operational and sales coordination</li>
+          <li>Iterated continuously based on evolving stakeholder needs — added forecast inputs as Finance built out their planning cycle, added segment views as Sales refined its territory model</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-content-section" aria-labelledby="cs-outcome">
+    <div class="cs-content-inner">
+      <p class="cs-section-label">Outcome</p>
+      <div class="cs-section-body">
+        <div class="cs-outcome-highlight">
+          <p class="outcome-num">1 Source of Truth</p>
+          <p class="outcome-desc">Sales, Marketing, and Finance — used daily across the organization</p>
+        </div>
+        <p>The dashboard became the organization's primary sales performance and planning artifact — referenced in every revenue review, forecast meeting, and board preparation cycle. Fragmented reporting was replaced by a shared view all three departments could work from simultaneously.</p>
+        <p>The direct production database connection kept latency low and eliminated the manual extraction step that had previously preceded any revenue analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-content-section" aria-labelledby="cs-skills">
+    <div class="cs-content-inner">
+      <p class="cs-section-label">Skills &amp; Tools</p>
+      <div class="cs-skills-grid">
+        <span class="tag">Tableau</span>
+        <span class="tag">SQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">GCP</span>
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Data Pipelines</span>
+        <span class="tag">Salesforce</span>
+        <span class="tag">Business Intelligence</span>
+      </div>
+    </div>
+  </section>
+
   <nav class="cs-nav-bottom" aria-label="Case study navigation">
-    <a href="../prj-003/" class="cs-nav-link">← Automated Spend Reporting</a>
-    <a href="/" class="cs-nav-link next">All Work →</a>
+    <div class="cs-nav-inner">
+      <a href="../prj-003/" class="cs-nav-link">← Automated Reporting</a>
+      <a href="/" class="cs-nav-link">All Work →</a>
+    </div>
   </nav>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
-    <span class="footer-name">Nathaniel A. Essex</span>
-    <ul class="footer-links">
-      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="../assets/documents/resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-    <a href="mailto:essex@nathanielessex.com" class="footer-email">essex@nathanielessex.com</a>
+    <div class="footer-inner">
+      <span class="footer-name">Nathaniel A. Essex</span>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="../assets/documents/resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+      <a href="mailto:essex@nathanielessex.com" class="footer-email">essex@nathanielessex.com</a>
+    </div>
   </footer>
 
   <script src="../js/nav.js"></script>
