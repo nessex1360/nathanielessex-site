@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automated Spend Reporting — Nathaniel Essex</title>
+  <meta name="description" content="How a Python pipeline replaced a week of manual work with 40+ automated recurring reports and a 90% efficiency gain. Case study by Nathaniel Essex.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-expression="professional">
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">Nathaniel Essex</a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="../assets/documents/resume.pdf" target="_blank" class="nav-cta">Resume ↓</a></li>
+    </ul>
+  </nav>
+
+  <!-- CASE STUDY HERO -->
+  <header class="cs-hero" aria-labelledby="cs-title">
+    <a href="/" class="cs-back">← All Work</a>
+    <p class="cs-eyebrow">CargoSprint · Engineering / Analytics</p>
+    <h1 class="cs-title" id="cs-title">Automated Customer Spend Reporting Pipeline</h1>
+    <p class="cs-metric-hero">90%</p>
+    <p class="cs-metric-label">Efficiency gain — one week of manual work per cycle replaced by automation</p>
+  </header>
+
+  <!-- PLACEHOLDER IMAGE -->
+  <div style="max-width: var(--max-content); margin: 0 auto; padding: 0 var(--section-pad-x);">
+    <div class="cs-image-placeholder">
+      <span>Project image — placeholder</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cs-body">
+
+    <!-- SIDEBAR META -->
+    <aside class="cs-sidebar" aria-label="Project metadata">
+      <div class="cs-meta-item">
+        <h4>Organization</h4>
+        <p>CargoSprint</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Role</h4>
+        <p>Senior Data Analyst</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Function</h4>
+        <p>Analytics, Customer Success</p>
+      </div>
+      <div class="cs-meta-item">
+        <h4>Timeline</h4>
+        <p>2022 – Present</p>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="cs-content">
+
+      <section class="cs-section" aria-labelledby="cs-context">
+        <h2 class="cs-section-label" id="cs-context">Context</h2>
+        <p>CargoSprint customers regularly requested detailed spend breakdowns — invoice-level data, year-over-year comparisons, facility performance, and transportation mode splits. Each report was built manually in Excel, one customer at a time. At scale, this took approximately one week of analyst time per reporting cycle.</p>
+        <p>The problem wasn't capability — the reporting structure was well-defined. The problem was that the same logic was being re-executed by hand, over and over, for each customer on each cadence. The fix was to stop doing that.</p>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-approach">
+        <h2 class="cs-section-label" id="cs-approach">Approach</h2>
+        <ul>
+          <li>Built a Python pipeline that generates 40+ unique recurring customer spend reports automatically on a scheduled basis</li>
+          <li>Report content: invoice-level detail, YTD and rolling-13 comparisons, peak volume periods, facility-level breakdowns, transportation mode splits, and fee category analysis</li>
+          <li>Delivery format: Excel workbooks — matching what customers in a blue-collar freight industry actually use and prefer</li>
+          <li>Built a Python UI for onboarding new customers to the reporting program — when a customer is added, their reports begin generating automatically on their chosen cadence (weekly, bi-weekly, or monthly)</li>
+          <li>Cadence logic is customer-configurable at onboarding; no analyst action required per cycle after setup</li>
+        </ul>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-outcome">
+        <h2 class="cs-section-label" id="cs-outcome">Outcome</h2>
+        <div class="cs-outcome-box">
+          <p class="outcome-metric">40+ Reports</p>
+          <p class="outcome-desc">Unique recurring automated reports — previously built manually each cycle</p>
+        </div>
+        <p style="margin-top: var(--space-5);">The pipeline replaced approximately one week of manual work per reporting cycle with fully automated generation. 90% efficiency gain. New customers self-enroll via the onboarding UI with no analyst intervention per cycle.</p>
+        <p>The reporting program expanded over time as more customers enrolled — without adding work to the analyst's plate. The system scales; the manual process did not.</p>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-skills">
+        <h2 class="cs-section-label" id="cs-skills">Skills &amp; Tools</h2>
+        <div class="cs-skills">
+          <span class="paragon-tag">Python</span>
+          <span class="paragon-tag">SQL</span>
+          <span class="paragon-tag">MySQL</span>
+          <span class="paragon-tag">Excel</span>
+          <span class="paragon-tag">Automation</span>
+          <span class="paragon-tag">Scheduling</span>
+          <span class="paragon-tag">Data Pipelines</span>
+          <span class="paragon-tag">UI / Onboarding</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- CASE STUDY BOTTOM NAV -->
+  <nav class="cs-nav-bottom" aria-label="Case study navigation">
+    <a href="../prj-001/" class="cs-nav-link">← Green Space Analysis</a>
+    <a href="../prj-002/" class="cs-nav-link next">Enterprise Sales Dashboard →</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <span class="footer-name">Nathaniel A. Essex</span>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/nathaniel-a-essex/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/nessex1360" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="../assets/documents/resume.pdf" target="_blank">Resume</a></li>
+    </ul>
+    <a href="mailto:essex@nathanielessex.com" class="footer-email">essex@nathanielessex.com</a>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

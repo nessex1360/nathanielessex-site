@@ -1,0 +1,552 @@
+/**
+ * Paragon Design Tokens
+ * nathanielessex.com
+ *
+ * Generated from: nathanielessex-site-plan-v3.md
+ * Source brand guide: _context/Paragon Brand Guide.md
+ *
+ * Usage: Paste the contents of this file into
+ * Framer → Settings → General → Custom Code → Head
+ * wrapped in <style> tags. Or import via the head-snippet.html.
+ *
+ * Token layers:
+ *   1. Color — core palette, expression accents, functional
+ *   2. Typography — families, scale, weights, tracking, leading
+ *   3. Spacing — 4pt base scale
+ *   4. Borders — radius, width, engraved style
+ *   5. Shadows & Glows — gold, blue, panel
+ *   6. Motion — duration, easing
+ *   7. Components — card, CTA, tag, divider, embed frame
+ *   8. Expression overrides — Professional, Consulting, Publishing
+ *   9. Utility classes — ready to apply in Framer
+ */
+
+/* ============================================================
+   1. COLOR
+   ============================================================ */
+
+:root {
+
+  /* --- Core Paragon Palette --- */
+  --void-black:         #0A0A0D;   /* Primary background — ceremony, depth            */
+  --obsidian-blue:      #10263D;   /* Secondary background — cartographic field, cards */
+  --atlas-blue:         #1B4F7A;   /* Structural panels, maps, professional surfaces   */
+  --aged-gold:          #B88A2A;   /* Legacy accent — headers, dividers, seals, CTAs   */
+  --parchment-stone:    #D8CFBF;   /* Soft neutral — editorial breathing room          */
+  --ash-silver:         #A6A9B0;   /* Secondary text — labels, captions, metadata      */
+  --signal-ivory:       #F3EEDF;   /* Primary text on dark fields                      */
+
+  /* --- Professional Expression Accents (/portfolio) --- */
+  --pro-accent-1:       #1B4F7A;   /* Atlas Blue — primary structural accent  */
+  --pro-accent-2:       #B88A2A;   /* Aged Gold — prestige emphasis           */
+  --pro-accent-3:       #8A9AAD;   /* Slate — secondary, understated          */
+
+  /* --- Consulting Expression Accents (/tinkerers) --- */
+  --con-accent-1:       #B88A2A;   /* Aged Gold — trust, value                */
+  --con-accent-2:       #A83228;   /* Ember Red — transformation, courage     */
+  --con-accent-3:       #C4764E;   /* Terracotta — warmth, human care         */
+
+  /* --- Publishing Expression Accents (/publishing) --- */
+  --pub-accent-1:       #B88A2A;   /* Aged Gold — wonder, initiation          */
+  --pub-accent-2:       #6B3FA0;   /* Violet — magic, mythic depth            */
+  --pub-accent-3:       #A83228;   /* Ember Red — intimacy                    */
+  --pub-accent-4:       #1A3A6A;   /* Cosmic Blue — mythic atmosphere         */
+
+  /* --- Functional / Interactive --- */
+  --glow-gold:          rgba(184, 138, 42, 0.25);   /* Hover glow, CTA pulse           */
+  --glow-gold-strong:   rgba(184, 138, 42, 0.45);   /* Active / focus state            */
+  --glow-blue:          rgba(27, 79, 122, 0.20);    /* Panel illumination              */
+  --glow-violet:        rgba(107, 63, 160, 0.25);   /* Publishing hover — book cards   */
+  --border-engraved:    rgba(166, 169, 176, 0.15);  /* Subtle metallic borders         */
+  --border-gold:        rgba(184, 138, 42, 0.60);   /* Active / hover border           */
+  --overlay-dark:       rgba(10, 10, 13, 0.55);     /* Image overlays, scrim layers    */
+  --overlay-obsidian:   rgba(16, 38, 61, 0.70);     /* Card overlays on images         */
+
+}
+
+/* ============================================================
+   2. TYPOGRAPHY
+   ============================================================ */
+
+:root {
+
+  /* --- Font Families --- */
+  --font-display:     'Cinzel', serif;              /* Hero titles, section headings    */
+  --font-body:        'Cormorant Garamond', serif;  /* Body, subheads, card text        */
+  --font-utility:     'DM Sans', sans-serif;        /* Labels, tags, nav, diagram text  */
+
+  /* --- Display Scale (Cinzel) --- */
+  --text-hero:        clamp(48px, 7vw, 80px);       /* Homepage PARAGON wordmark        */
+  --text-display:     clamp(36px, 5vw, 60px);       /* Page hero titles                 */
+  --text-heading-1:   clamp(28px, 3.5vw, 44px);     /* Section openers                  */
+  --text-heading-2:   clamp(22px, 2.5vw, 32px);     /* Sub-section headings             */
+  --text-heading-3:   20px;                          /* Cinzel small-caps labels         */
+
+  /* --- Body Scale (Cormorant Garamond) --- */
+  --text-subhead:     clamp(20px, 2vw, 26px);       /* Introductions, card titles       */
+  --text-body:        18px;                          /* Primary narrative text           */
+  --text-body-sm:     16px;                          /* Compact body, captions           */
+
+  /* --- Utility Scale (DM Sans) --- */
+  --text-label:       13px;                          /* Tags, chips, nav items           */
+  --text-caption:     12px;                          /* Diagram legends, footnotes       */
+  --text-micro:       11px;                          /* Timestamps, sort labels          */
+
+  /* --- Font Weights --- */
+  --weight-display:   700;                           /* Cinzel hero / H1                 */
+  --weight-heading:   600;                           /* Cinzel section headings          */
+  --weight-subhead:   600;                           /* Cormorant Garamond subheads      */
+  --weight-body:      400;                           /* Cormorant Garamond body          */
+  --weight-utility:   500;                           /* DM Sans labels                   */
+  --weight-utility-r: 400;                           /* DM Sans regular                  */
+
+  /* --- Line Heights --- */
+  --leading-tight:    0.95;                          /* Hero wordmarks (Cinzel, large)   */
+  --leading-heading:  1.10;                          /* Section headings                 */
+  --leading-subhead:  1.30;                          /* Card titles, subheads            */
+  --leading-body:     1.65;                          /* Narrative body text              */
+  --leading-utility:  1.40;                          /* Labels, tags                     */
+
+  /* --- Letter Spacing --- */
+  --tracking-display:  0.02em;                       /* Cinzel hero — slight open        */
+  --tracking-heading:  0.08em;                       /* Cinzel section headings          */
+  --tracking-label:    0.12em;                       /* All-caps utility labels          */
+  --tracking-body:     0.01em;                       /* Cormorant body — very subtle     */
+
+}
+
+/* ============================================================
+   3. SPACING (4pt base scale)
+   ============================================================ */
+
+:root {
+
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10: 128px;
+  --space-11: 192px;
+  --space-12: 256px;
+
+  /* --- Section Padding --- */
+  --section-pad-y:     clamp(64px, 8vw, 128px);
+  --section-pad-x:     clamp(24px, 6vw, 96px);
+
+  /* --- Content Max Widths --- */
+  --max-content:      1280px;
+  --max-prose:         720px;
+  --max-card:          420px;
+
+}
+
+/* ============================================================
+   4. BORDERS
+   ============================================================ */
+
+:root {
+
+  --border-width-fine:    1px;
+  --border-width-mid:     2px;
+
+  --border-style-engraved: 1px solid var(--border-engraved);
+  --border-style-gold:     1px solid var(--border-gold);
+  --border-style-atlas:    1px solid var(--atlas-blue);
+
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:    16px;
+  --radius-pill:  999px;
+  --radius-none:    0px;   /* Cards, panels — sharp Paragon geometry */
+
+}
+
+/* ============================================================
+   5. SHADOWS & GLOWS
+   ============================================================ */
+
+:root {
+
+  /* --- Gold glows (hover, CTA, legacy accent) --- */
+  --shadow-glow-gold:        0 0 20px var(--glow-gold);
+  --shadow-glow-gold-inset:  inset 0 0 12px var(--glow-gold);
+  --shadow-glow-gold-strong: 0 0 32px var(--glow-gold-strong);
+
+  /* --- Hero headline gold glow --- */
+  --shadow-text-gold:        0 0 40px rgba(184, 138, 42, 0.30);
+
+  /* --- Blue panel illumination --- */
+  --shadow-glow-blue:        0 0 24px var(--glow-blue);
+  --shadow-panel-blue:       0 4px 24px rgba(16, 38, 61, 0.60);
+
+  /* --- Violet glow (Publishing only) --- */
+  --shadow-glow-violet:      0 0 20px var(--glow-violet);
+
+  /* --- Card elevation (default / hover) --- */
+  --shadow-card:             0 2px 12px rgba(10, 10, 13, 0.50);
+  --shadow-card-hover:       0 8px 32px rgba(10, 10, 13, 0.70);
+
+  /* --- Subtle bevel on display wordmark --- */
+  --shadow-text-bevel:
+    1px 1px 0px rgba(255,255,255,0.04),
+    -1px -1px 0px rgba(0,0,0,0.40),
+    0 0 40px rgba(184, 138, 42, 0.20);
+
+}
+
+/* ============================================================
+   6. MOTION
+   ============================================================ */
+
+:root {
+
+  --duration-fast:    150ms;
+  --duration-base:    300ms;
+  --duration-slow:    500ms;
+  --duration-page:    600ms;
+
+  --ease-standard:  cubic-bezier(0.4, 0, 0.2, 1);   /* Material standard — most interactions */
+  --ease-enter:     cubic-bezier(0.0, 0, 0.2, 1);   /* Elements entering the screen          */
+  --ease-exit:      cubic-bezier(0.4, 0, 1, 1);     /* Elements leaving the screen           */
+  --ease-stately:   cubic-bezier(0.25, 0.1, 0.25, 1); /* Paragon default — smooth, dignified */
+
+  --transition-card:
+    border-color var(--duration-base) var(--ease-stately),
+    box-shadow   var(--duration-base) var(--ease-stately),
+    transform    var(--duration-base) var(--ease-stately);
+
+  --transition-cta:
+    box-shadow   var(--duration-base) var(--ease-stately),
+    color        var(--duration-base) var(--ease-stately);
+
+  --transition-link:
+    color        var(--duration-fast) var(--ease-standard),
+    opacity      var(--duration-fast) var(--ease-standard);
+
+}
+
+/* ============================================================
+   7. COMPONENTS
+   ============================================================ */
+
+:root {
+
+  /* --- Card (all expressions baseline) --- */
+  --card-bg:              var(--obsidian-blue);
+  --card-border:          var(--border-style-engraved);
+  --card-border-hover:    var(--border-style-gold);
+  --card-shadow:          var(--shadow-card);
+  --card-shadow-hover:    var(--shadow-card-hover), var(--shadow-glow-gold);
+  --card-lift:            translateY(-4px);
+  --card-radius:          var(--radius-none);      /* Sharp corners — Paragon geometry  */
+
+  /* --- CTA Button --- */
+  --cta-color:            var(--aged-gold);
+  --cta-border:           var(--border-style-gold);
+  --cta-bg:               transparent;
+  --cta-shadow-hover:     var(--shadow-glow-gold);
+  --cta-font:             var(--font-utility);
+  --cta-size:             var(--text-label);
+  --cta-weight:           var(--weight-utility);
+  --cta-tracking:         var(--tracking-label);
+  --cta-text-transform:   uppercase;
+
+  /* --- Tag / Chip --- */
+  --tag-bg:               var(--obsidian-blue);
+  --tag-color:            var(--ash-silver);
+  --tag-border:           var(--border-style-engraved);
+  --tag-font:             var(--font-utility);
+  --tag-size:             var(--text-caption);
+  --tag-radius:           var(--radius-sm);
+  --tag-pad:              var(--space-1) var(--space-3);
+
+  /* --- Gold Divider Line --- */
+  --divider-color:        var(--aged-gold);
+  --divider-opacity:      0.40;
+  --divider-height:       1px;
+
+  /* --- Tableau Embed Frame (Professional) --- */
+  --embed-border-tableau: var(--border-style-atlas);
+  --embed-bg-tableau:     var(--obsidian-blue);
+
+  /* --- Video Player Frame --- */
+  --embed-border-video:   var(--border-style-engraved);
+  --embed-bg-video:       var(--obsidian-blue);
+
+  /* --- Navigation --- */
+  --nav-bg:               var(--void-black);
+  --nav-color:            var(--ash-silver);
+  --nav-color-hover:      var(--aged-gold);
+  --nav-color-active:     var(--signal-ivory);
+  --nav-font:             var(--font-utility);
+  --nav-size:             var(--text-label);
+  --nav-tracking:         var(--tracking-label);
+
+  /* --- Form Fields --- */
+  --input-bg:             var(--obsidian-blue);
+  --input-border:         var(--border-style-engraved);
+  --input-border-focus:   var(--border-style-gold);
+  --input-color:          var(--signal-ivory);
+  --input-placeholder:    var(--ash-silver);
+  --input-font:           var(--font-body);
+  --input-radius:         var(--radius-none);
+
+}
+
+/* ============================================================
+   8. EXPRESSION OVERRIDES
+   Scope these to sections or page-level containers in Framer.
+   Usage: add data-expression="professional" to a wrapper.
+   ============================================================ */
+
+[data-expression="professional"] {
+  --expr-accent-primary:   var(--pro-accent-1);    /* Atlas Blue   */
+  --expr-accent-secondary: var(--pro-accent-2);    /* Aged Gold    */
+  --expr-accent-tertiary:  var(--pro-accent-3);    /* Slate        */
+  --expr-card-hover-glow:  var(--shadow-glow-blue);
+  --expr-bg-gradient:      var(--void-black);      /* No gradient — maximum restraint */
+  --expr-card-hover-border: var(--border-style-gold);
+  --expr-body-immersion:   none;                   /* No atmospheric overlays */
+}
+
+[data-expression="consulting"] {
+  --expr-accent-primary:   var(--con-accent-1);    /* Aged Gold    */
+  --expr-accent-secondary: var(--con-accent-2);    /* Ember Red    */
+  --expr-accent-tertiary:  var(--con-accent-3);    /* Terracotta   */
+  --expr-card-hover-glow:  var(--shadow-glow-gold-strong);
+  --expr-bg-gradient:
+    linear-gradient(
+      160deg,
+      var(--void-black)    0%,
+      var(--obsidian-blue) 100%
+    );
+  --expr-card-hover-border: var(--border-style-gold);
+  --expr-body-immersion:   moderate;               /* Warmer glow, generous spacing */
+}
+
+[data-expression="publishing"] {
+  --expr-accent-primary:   var(--pub-accent-1);    /* Aged Gold    */
+  --expr-accent-secondary: var(--pub-accent-2);    /* Violet       */
+  --expr-accent-tertiary:  var(--pub-accent-3);    /* Ember Red    */
+  --expr-accent-deep:      var(--pub-accent-4);    /* Cosmic Blue  */
+  --expr-card-hover-glow:  var(--shadow-glow-violet);
+  --expr-bg-gradient:
+    linear-gradient(
+      160deg,
+      var(--void-black)    0%,
+      var(--pub-accent-4)  100%
+    );
+  --expr-card-hover-border: 1px solid var(--pub-accent-2);
+  --expr-body-immersion:   full;                   /* Atmospheric overlays permitted */
+}
+
+/* ============================================================
+   9. UTILITY CLASSES
+   Apply directly to elements in Framer's custom class field.
+   ============================================================ */
+
+/* --- Page base --- */
+.paragon-page {
+  background-color: var(--void-black);
+  color: var(--signal-ivory);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* --- Display / hero headline --- */
+.paragon-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--signal-ivory);
+  text-shadow: var(--shadow-text-bevel);
+}
+
+/* --- Section heading (Cinzel, all-caps) --- */
+.paragon-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-2);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--signal-ivory);
+}
+
+/* --- Heading with gold glow --- */
+.paragon-heading-glow {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-2);
+  font-weight: var(--weight-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--signal-ivory);
+  text-shadow: var(--shadow-text-gold);
+}
+
+/* --- Subhead (Cormorant Garamond) --- */
+.paragon-subhead {
+  font-family: var(--font-body);
+  font-size: var(--text-subhead);
+  font-weight: var(--weight-subhead);
+  line-height: var(--leading-subhead);
+  color: var(--signal-ivory);
+}
+
+/* --- Body prose --- */
+.paragon-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--signal-ivory);
+}
+
+/* --- Utility label (all-caps, DM Sans) --- */
+.paragon-label {
+  font-family: var(--font-utility);
+  font-size: var(--text-label);
+  font-weight: var(--weight-utility);
+  line-height: var(--leading-utility);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ash-silver);
+}
+
+/* --- Gold accent text (metrics, key words) --- */
+.paragon-gold {
+  color: var(--aged-gold);
+}
+
+/* --- Secondary / caption text --- */
+.paragon-muted {
+  color: var(--ash-silver);
+}
+
+/* --- Gold divider line --- */
+.paragon-divider {
+  width: 100%;
+  height: var(--divider-height);
+  background-color: var(--divider-color);
+  opacity: var(--divider-opacity);
+  border: none;
+  margin: var(--space-7) 0;
+}
+
+/* --- Standard card --- */
+.paragon-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-card);
+}
+
+.paragon-card:hover {
+  border-color: var(--aged-gold);
+  box-shadow: var(--card-shadow-hover);
+  transform: var(--card-lift);
+}
+
+/* --- CTA button --- */
+.paragon-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  color: var(--cta-color);
+  border: var(--cta-border);
+  background: var(--cta-bg);
+  border-radius: var(--radius-none);
+  font-family: var(--cta-font);
+  font-size: var(--cta-size);
+  font-weight: var(--cta-weight);
+  letter-spacing: var(--cta-tracking);
+  text-transform: var(--cta-text-transform);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-cta);
+}
+
+.paragon-cta:hover {
+  box-shadow: var(--cta-shadow-hover);
+}
+
+/* --- Skill / category tag --- */
+.paragon-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--tag-pad);
+  background-color: var(--tag-bg);
+  color: var(--tag-color);
+  border: var(--tag-border);
+  border-radius: var(--tag-radius);
+  font-family: var(--tag-font);
+  font-size: var(--tag-size);
+  line-height: var(--leading-utility);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* --- Embed / Tableau frame (Professional) --- */
+.paragon-embed-tableau {
+  background-color: var(--embed-bg-tableau);
+  border: var(--embed-border-tableau);
+  padding: var(--space-4);
+}
+
+/* --- Embed / Video frame --- */
+.paragon-embed-video {
+  background-color: var(--embed-bg-video);
+  border: var(--embed-border-video);
+  padding: var(--space-4);
+}
+
+/* --- Drop cap (Publishing expression only) --- */
+.paragon-drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 4em;
+  font-weight: var(--weight-display);
+  float: left;
+  line-height: 0.80;
+  margin: 0.05em 0.12em 0 0;
+  color: var(--aged-gold);
+}
+
+/* --- Publishing book card (violet hover variant) --- */
+.paragon-book-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-card);
+}
+
+.paragon-book-card:hover {
+  border-color: var(--pub-accent-2);
+  box-shadow: var(--card-shadow-hover), var(--shadow-glow-violet);
+  transform: var(--card-lift);
+}
+
+/* --- Consulting transformation card (ember red hover variant) --- */
+.paragon-transform-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  transition: var(--transition-card);
+}
+
+.paragon-transform-card:hover {
+  border-color: var(--con-accent-2);
+  box-shadow: var(--card-shadow-hover), 0 0 20px rgba(168, 50, 40, 0.25);
+  transform: var(--card-lift);
+}
