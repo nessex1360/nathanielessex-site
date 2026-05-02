@@ -171,7 +171,7 @@
   }
   .hero-cta:hover { background: #d44432; transform: translateY(-1px);}
 
-  /* RIGHT: featured app — Exorcise FUD profile */
+  /* RIGHT: featured app — Exorcise phone carousel */
   .hero-feature {
     justify-self: end;
     width: 100%;
@@ -184,12 +184,53 @@
     color: var(--gold-bright);
     margin-bottom: 18px;
   }
-  .hero-feature-cover {
+  .hero-phone-stack {
+    position: relative;
     width: 100%;
     aspect-ratio: 9/19;
-    background: transparent center/contain no-repeat;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.55))
-            drop-shadow(0 0 80px rgba(184,138,42,0.18));
+  }
+  .hero-phone-stack img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    animation: phoneCycle 12s infinite var(--ease-stately, ease-in-out);
+    filter:
+      drop-shadow(0 30px 60px rgba(0,0,0,0.55))
+      drop-shadow(0 0 80px rgba(184,138,42,0.18));
+  }
+  .hero-phone-stack img:nth-child(1) { animation-delay: 0s; }
+  .hero-phone-stack img:nth-child(2) { animation-delay: 4s; }
+  .hero-phone-stack img:nth-child(3) { animation-delay: 8s; }
+  @keyframes phoneCycle {
+    0%   { opacity: 0; transform: translateX(8px); }
+    4%   { opacity: 1; transform: translateX(0); }
+    29%  { opacity: 1; transform: translateX(0); }
+    33%  { opacity: 0; transform: translateX(-8px); }
+    100% { opacity: 0; transform: translateX(-8px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-phone-stack img { animation: none; opacity: 1; }
+    .hero-phone-stack img:nth-child(2),
+    .hero-phone-stack img:nth-child(3) { display: none; }
+  }
+  .hero-phone-dots {
+    display: flex; justify-content: center; gap: 8px;
+    margin-top: 16px;
+  }
+  .hero-phone-dots span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    animation: dotCycle 12s infinite;
+  }
+  .hero-phone-dots span:nth-child(1) { animation-delay: 0s; }
+  .hero-phone-dots span:nth-child(2) { animation-delay: 4s; }
+  .hero-phone-dots span:nth-child(3) { animation-delay: 8s; }
+  @keyframes dotCycle {
+    0%, 33%, 100% { background: rgba(255,255,255,0.25); }
+    4%, 29% { background: var(--gold-bright); box-shadow: 0 0 8px rgba(212,162,62,0.6); }
   }
   .hero-feature-meta {
     margin-top: 18px;
@@ -702,7 +743,14 @@
 
     <div class="hero-feature">
       <div class="hero-feature-tag">Featured App &middot; In Development</div>
-      <div class="hero-feature-cover" style="background-image: url('assets/app_screens_01.png');"></div>
+      <div class="hero-phone-stack" aria-label="Exorcise app screens">
+        <img src="assets/app_screens_01.png" alt="FUD profile — Fear, Uncertainty, Doubt, Difficulty">
+        <img src="assets/app_screens_02.png" alt="Daily briefing — today's ritual">
+        <img src="assets/app_screens_03.png" alt="The reading — pre-drill body scan">
+      </div>
+      <div class="hero-phone-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
       <div class="hero-feature-meta">
         <strong>Exorcise</strong>
         Beat anxiety. Build courage.
