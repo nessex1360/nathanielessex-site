@@ -189,6 +189,23 @@
     width: 100%;
     aspect-ratio: 9/19;
   }
+  .hero-phone-stack {
+    /* radial gold halo behind the phones for legibility */
+  }
+  .hero-phone-stack::before {
+    content: "";
+    position: absolute; inset: -8%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(212,162,62,0.32) 0%,
+      rgba(212,162,62,0.16) 35%,
+      rgba(212,162,62,0.06) 60%,
+      transparent 75%
+    );
+    filter: blur(18px);
+    pointer-events: none;
+    z-index: 0;
+  }
   .hero-phone-stack img {
     position: absolute;
     inset: 0;
@@ -196,10 +213,12 @@
     height: 100%;
     object-fit: contain;
     opacity: 0;
+    z-index: 1;
     animation: phoneCycle 12s infinite var(--ease-stately, ease-in-out);
     filter:
-      drop-shadow(0 30px 60px rgba(0,0,0,0.55))
-      drop-shadow(0 0 80px rgba(184,138,42,0.18));
+      drop-shadow(0 0 24px rgba(212,162,62,0.55))
+      drop-shadow(0 0 48px rgba(184,138,42,0.35))
+      drop-shadow(0 30px 60px rgba(0,0,0,0.55));
   }
   .hero-phone-stack img:nth-child(1) { animation-delay: 0s; }
   .hero-phone-stack img:nth-child(2) { animation-delay: 4s; }
@@ -788,8 +807,7 @@
       <p class="news-tag">Home economics for the modern era.</p>
       <p class="news-body">
         Org design, management, and leadership principles, applied to parenting and
-        running a modern family. A separate practice from everything else on this site —
-        and the one most likely to change your week.
+        running a modern family.
       </p>
       <a class="btn-substack" href="https://householdmojo.substack.com" target="_blank" rel="noopener">
         Read on Substack →
@@ -853,8 +871,8 @@
       <h2 class="section-name">Books</h2>
       <p class="section-tagline">Sufficiently Advanced Publishing</p>
       <p class="section-lede">
-        Afrofuturist epics, mythic fantasy, and the occasional book of working magic.
-        A story's job is to leave the reader with one more door than they had before.
+        Some doors only open if you read them. These are the keys I've been forging —
+        for the kid still up at midnight under the blanket, looking for a way through.
       </p>
     </header>
 
