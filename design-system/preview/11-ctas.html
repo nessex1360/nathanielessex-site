@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CTAs &amp; Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 32px; font-family:'DM Sans',sans-serif; color: var(--ash-silver);}
+  .row { display:flex; gap:14px; align-items:center; margin-bottom: 18px; flex-wrap: wrap;}
+  .label { font-size: 10px; letter-spacing:.12em; text-transform: uppercase; color: var(--ash-silver); width: 110px;}
+  .btn-ghost  { display:inline-flex; align-items:center; gap:8px; padding: 12px 24px;
+                color: var(--aged-gold); border: 1px solid rgba(184,138,42,.6);
+                font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:.12em;
+                text-transform: uppercase; background: transparent;}
+  .btn-ghost.hover { box-shadow: 0 0 20px rgba(184,138,42,.45); color: var(--signal-ivory);}
+  .btn-solid { display:inline-flex; padding: 12px 24px; background: #B88A2A; color: #0A0A0D;
+               font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:.12em;
+               text-transform: uppercase; border:none;}
+  .btn-link  { color: var(--aged-gold); font-family:'DM Sans',sans-serif; font-size: 13px;
+               letter-spacing:.12em; text-transform: uppercase;}
+  .btn-link.hover { border-bottom: 1px solid var(--aged-gold);}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="label">Primary · Ghost</div>
+    <button class="btn-ghost">Begin a conversation →</button>
+    <button class="btn-ghost hover">Hover state</button>
+  </div>
+  <div class="row">
+    <div class="label">Primary · Solid</div>
+    <button class="btn-solid">Enter the catalog →</button>
+  </div>
+  <div class="row">
+    <div class="label">Inline link</div>
+    <a class="btn-link">View case study →</a>
+    <a class="btn-link hover">Hover</a>
+  </div>
+</body>
+</html>

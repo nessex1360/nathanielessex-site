@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Borders & Frames</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width: 700px; padding: 28px; font-family:'DM Sans',sans-serif; color: var(--ash-silver);}
+  .grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 16px;}
+  .cell { padding: 18px; min-height: 90px; background: var(--obsidian-blue); position: relative;
+          font-size: 10px; letter-spacing:.12em; text-transform:uppercase;}
+  .engraved { border: 1px solid rgba(166, 169, 176, 0.15);}
+  .gold     {
+    border: 1px solid rgba(242, 199, 96, 0.85);
+    box-shadow: 0 0 0 1px rgba(242, 199, 96, 0.10), 0 0 18px rgba(242, 199, 96, 0.25);
+  }
+  .atlas    { border: 1px solid #1B4F7A;}
+  .frame    { border: 1px solid rgba(166,169,176,.15);}
+  .frame::before, .frame::after, .frame > .br, .frame > .bl {
+      content:""; position:absolute; width: 12px; height: 12px;
+      border: 1.5px solid #F2C760; opacity: 1;
+      filter: drop-shadow(0 0 4px rgba(242, 199, 96, 0.55));
+  }
+  .frame::before { top:-1px; left:-1px;  border-right: none; border-bottom: none;}
+  .frame::after  { top:-1px; right:-1px; border-left:  none; border-bottom: none;}
+  .frame .bl { bottom:-1px; left:-1px;  border-right: none; border-top:    none;}
+  .frame .br { bottom:-1px; right:-1px; border-left:  none; border-top:    none;}
+  .label { color: #F2C760; font-family:'Cinzel',serif; font-weight:700; letter-spacing:.14em; font-size: 12px; text-shadow: 0 0 10px rgba(242, 199, 96, 0.35);}
+  .sub { font-size: 10px; opacity:.7; margin-top: 6px;}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell engraved"><div class="label">Engraved</div><div class="sub">1px ash · 15% alpha</div></div>
+    <div class="cell gold"><div class="label">Gold Seal</div><div class="sub">1px gold · 60% alpha</div></div>
+    <div class="cell atlas"><div class="label">Atlas Frame</div><div class="sub">1px atlas blue</div></div>
+    <div class="cell frame" style="grid-column: span 3;">
+      <span class="bl"></span><span class="br"></span>
+      <div class="label">Map-Room Frame</div>
+      <div class="sub">L-shaped gold corner brackets · used for featured modules and case-study openings</div>
+    </div>
+  </div>
+</body>
+</html>

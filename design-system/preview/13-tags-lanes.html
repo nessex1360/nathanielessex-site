@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tags & Lane Labels</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 32px; font-family:'DM Sans',sans-serif;}
+  .row { margin-bottom: 24px;}
+  .meta { font-size: 10px; letter-spacing:.12em; text-transform: uppercase; color: var(--ash-silver); margin-bottom: 10px;}
+  .tags { display:flex; flex-wrap:wrap; gap: 8px;}
+  .tag  { display:inline-flex; align-items:center; padding: 6px 12px;
+          background: var(--obsidian-blue); color: var(--ash-silver);
+          border:1px solid rgba(166,169,176,.20); border-radius: 4px;
+          font-size: 11px; letter-spacing:.12em; text-transform: uppercase;}
+  .tag.gold { border-color: rgba(184,138,42,.6); color: var(--aged-gold);}
+  .lane { display:flex; align-items:center; gap: 10px; font-family:'Cinzel',serif; font-weight: 600;
+          font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aged-gold);
+          padding: 10px 0;}
+  .lane .sub { font-family: 'DM Sans', sans-serif; font-style: normal; font-weight: 500;
+               font-size: 13px; color: var(--ash-silver); letter-spacing: 0.10em; text-transform: uppercase;}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="meta">Tags · skill chips · metadata</div>
+    <div class="tags">
+      <span class="tag">Strategy</span>
+      <span class="tag">Data Engineering</span>
+      <span class="tag">AI Systems</span>
+      <span class="tag gold">Featured</span>
+      <span class="tag">Tableau</span>
+      <span class="tag">DAX</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="meta">Lane labels — homepage triptych</div>
+    <div class="lane">◈ Portfolio <span class="sub">— Strategy. Systems. Impact.</span></div>
+    <div class="lane">◈ Consulting <span class="sub">— Transformation. Systems. Guidance.</span></div>
+    <div class="lane">◈ Publishing <span class="sub">— Wonder. Myth. Story.</span></div>
+  </div>
+</body>
+</html>

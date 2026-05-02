@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nathan Essex</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  /* ============================================================
+     NATHAN ESSEX  ·  Single page
+     Promo → White nav → Dark hero (with Emerald Door cover)
+     → Light About (narrative) → Dark Books → Light Newsletter (Household Mojo)
+     → Dark Voodad → Light Projects → Dark Footer
+     ============================================================ */
+
+  :root {
+    --paper:        #F3EEDF;
+    --paper-deep:   #ECE5D2;
+    --ink:          #10263D;
+    --ink-2:        #44546A;
+    --ink-3:        #8A95A5;
+    --gold:         #B88A2A;
+    --gold-bright:  #D4A23E;
+    --rule:         rgba(16,38,61,0.12);
+    --rule-strong:  rgba(16,38,61,0.22);
+    --hero-dark:    #0A0F18;
+    --promo-dark:   #0E1722;
+    --ember:        #B83A2D;
+  }
+
+  *, *::before, *::after { box-sizing: border-box;}
+  html, body { margin: 0; padding: 0;}
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block;}
+  a { color: inherit; text-decoration: none;}
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px;}
+
+  /* ============= 1. PROMO STRIP ============================ */
+  .promo {
+    background: var(--promo-dark); color: #fff;
+    padding: 12px 0; text-align: center;
+  }
+  .promo-inner {
+    font-family: var(--font-utility); font-size: 13px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 500;
+  }
+  .promo-inner b {
+    color: var(--gold-bright); font-weight: 700; margin-right: 8px;
+  }
+  .promo-inner a {
+    margin-left: 14px; padding: 4px 12px;
+    border: 1px solid rgba(255,255,255,0.4); border-radius: 2px;
+    color: #fff; transition: background 200ms;
+    font-weight: 600; font-size: 12px;
+  }
+  .promo-inner a:hover { background: var(--gold-bright); color: var(--promo-dark); border-color: var(--gold-bright);}
+
+  /* ============= 2. NAV ==================================== */
+  .nav {
+    background: #fff;
+    border-bottom: 1px solid var(--rule);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .nav-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 72px;
+    padding: 0 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+  .nav-mark {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 22px; letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .nav-mark-glyph {
+    width: 32px; height: 32px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink); font-family: var(--font-display);
+    font-weight: 700; font-size: 18px; letter-spacing: 0;
+    border: 1.5px solid var(--ink); border-radius: 50%;
+  }
+  .nav-links {
+    display: flex; align-items: center; justify-content: center;
+    gap: 28px;
+  }
+  .nav-link {
+    font-family: var(--font-utility); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink); padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 200ms, border-color 200ms;
+  }
+  .nav-link.active { border-bottom-color: var(--gold);}
+  .nav-link:hover { color: var(--gold);}
+
+  .nav-social {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .nav-social a {
+    width: 28px; height: 28px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--ink-2);
+    border-radius: 50%;
+    transition: color 200ms, background 200ms;
+  }
+  .nav-social a:hover { color: var(--gold);}
+  .nav-social svg { width: 16px; height: 16px;}
+
+  /* ============= 3. HERO =================================== */
+  .hero {
+    position: relative;
+    min-height: 640px;
+    background:
+      linear-gradient(105deg, rgba(10,15,24,0.88) 0%, rgba(10,15,24,0.55) 55%, rgba(10,15,24,0.30) 100%),
+      var(--hero-dark);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(184,138,42,0.18) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: 64px; align-items: center;
+    padding: 96px 0 88px;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-utility); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.30em; text-transform: uppercase;
+    color: var(--gold-bright); margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(46px, 6.5vw, 84px);
+    letter-spacing: 0.02em; text-transform: uppercase;
+    line-height: 0.98; color: #fff;
+    margin: 0 0 20px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+  .hero-sub {
+    font-family: var(--font-utility); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--gold-bright);
+    margin: 0 0 36px;
+  }
+  .hero-sub .sep { margin: 0 10px; color: rgba(212,162,62,0.55); font-weight: 400;}
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ember); color: #fff;
+    font-family: var(--font-utility); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 16px 32px; border-radius: 2px;
+    transition: background 200ms, transform 200ms;
+  }
+  .hero-cta:hover { background: #d44432; transform: translateY(-1px);}
+
+  /* RIGHT: featured book — actual Emerald Door cover */
+  .hero-feature {
+    justify-self: end;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+  }
+  .hero-feature-tag {
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.30em; text-transform: uppercase; font-weight: 700;
+    color: var(--gold-bright);
+    margin-bottom: 18px;
+  }
+  .hero-feature-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: #000 center/cover no-repeat;
+    border: 1px solid rgba(212,162,62,0.4);
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.55),
+      0 0 80px rgba(184,138,42,0.18);
+  }
+  .hero-feature-meta {
+    margin-top: 18px;
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+  .hero-feature-meta strong {
+    display: block;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 16px; letter-spacing: 0.10em;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  /* ============= SECTIONS — common ========================= */
+  .section { padding: 100px 0;}
+  .section--light { background: var(--paper);}
+  .section--light-alt { background: var(--paper-deep);}
+  .section--dark { background: var(--hero-dark); color: #fff;}
+  .section--dark .section-name,
+  .section--dark .section-tagline { color: #fff;}
+  .section--dark .section-lede { color: rgba(255,255,255,0.72);}
+
+  .section-head { text-align: center; max-width: 880px; margin: 0 auto 56px;}
+  .section-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(48px, 6vw, 76px); letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink);
+    line-height: 1.0; margin: 0 0 16px;
+  }
+  .section-tagline {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(20px, 2.2vw, 28px); letter-spacing: 0.10em;
+    text-transform: uppercase; color: var(--ink);
+    line-height: 1.2; margin: 0 0 20px;
+  }
+  .section-lede {
+    font-family: var(--font-body); font-size: 18px;
+    line-height: 1.65; color: var(--ink-2);
+    max-width: 720px; margin: 0 auto;
+    font-weight: 500;
+  }
+
+  /* ============= ABOUT (narrative) ========================= */
+  .about-grid {
+    display: grid; grid-template-columns: 5fr 7fr;
+    gap: 64px; align-items: start;
+  }
+  .about-photo {
+    aspect-ratio: 4/5;
+    background: #d4cab7;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(16,38,61,0.18);
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top;}
+  .about-eyebrow {
+    font-family: var(--font-utility); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 16px;
+  }
+  .about-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(34px, 4vw, 52px); letter-spacing: 0.03em;
+    text-transform: uppercase; color: var(--ink);
+    line-height: 1.05; margin: 0 0 28px;
+  }
+  .about-body p {
+    font-family: var(--font-body); font-size: 19px; line-height: 1.7;
+    color: var(--ink); margin: 0 0 20px; font-weight: 500;
+  }
+  .about-body p:first-of-type::first-letter {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 4.2em; line-height: 0.9;
+    float: left; padding: 6px 12px 0 0;
+    color: var(--gold);
+  }
+  .about-body p em { color: var(--ink); font-style: italic; font-weight: 600;}
+  .about-sign {
+    margin-top: 12px;
+    font-family: var(--font-display); font-style: italic;
+    font-size: 18px; color: var(--ink-2);
+  }
+
+  /* ============= BOOKS ===================================== */
+  .books-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px;
+    margin-bottom: 40px;
+  }
+  .books-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 960px; margin-left: auto; margin-right: auto;
+  }
+  .book { text-align: center; transition: transform 240ms;}
+  .book:hover { transform: translateY(-4px);}
+  .book-cover {
+    aspect-ratio: 2/3;
+    margin-bottom: 16px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+    background: #0a1a2c;
+    background-size: cover; background-position: center;
+    border: 1px solid rgba(212,162,62,0.3);
+    position: relative;
+  }
+  .book-cat {
+    font-family: var(--font-utility); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-bright); margin-bottom: 4px;
+  }
+  .section--dark .book-blurb { color: rgba(255,255,255,0.72);}
+  .book-blurb {
+    font-family: var(--font-body); font-size: 15px; line-height: 1.45;
+    color: var(--ink-2); margin: 0; font-weight: 500;
+  }
+
+  /* ============= NEWSLETTER (Household Mojo) =============== */
+  .news-card {
+    max-width: 720px; margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--rule-strong);
+    padding: 56px 48px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(16,38,61,0.10);
+  }
+  .news-mark {
+    font-family: var(--font-utility); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.30em; text-transform: uppercase;
+    color: var(--ember); margin-bottom: 14px;
+  }
+  .news-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(40px, 5vw, 60px); letter-spacing: 0.03em;
+    text-transform: uppercase; color: var(--ink);
+    line-height: 1.0; margin: 0 0 12px;
+  }
+  .news-tag {
+    font-family: var(--font-display); font-weight: 600; font-style: italic;
+    font-size: 20px; color: var(--gold);
+    margin: 0 0 24px;
+  }
+  .news-body {
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    color: var(--ink-2); max-width: 540px; margin: 0 auto 32px;
+    font-weight: 500;
+  }
+  .btn-substack {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ember); color: #fff;
+    font-family: var(--font-utility); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 16px 30px; border-radius: 2px;
+    transition: background 200ms, transform 200ms;
+  }
+  .btn-substack:hover { background: #d44432; transform: translateY(-1px);}
+  .news-meta {
+    font-family: var(--font-utility); font-size: 10px;
+    letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--ink-3); margin-top: 18px;
+  }
+
+  /* ============= VOODAD =================================== */
+  .voodad-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: center;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .voodad-art {
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, #1B4F7A 0%, #10263D 60%, #08182a 100%);
+    border: 1px solid rgba(212,162,62,0.3);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .voodad-art::before {
+    content:""; position: absolute; inset: 16px;
+    border: 1px solid rgba(212,162,62,0.18);
+  }
+  .voodad-art-mark {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(56px, 8vw, 96px); letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--gold-bright);
+    text-align: center; line-height: 0.95;
+  }
+  .voodad-art-mark small {
+    display: block;
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.30em; color: rgba(255,255,255,0.6);
+    margin-top: 18px; font-weight: 600;
+  }
+  .voodad-text h3 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(36px, 4vw, 52px); letter-spacing: 0.04em;
+    text-transform: uppercase; color: #fff;
+    margin: 0 0 12px; line-height: 1.0;
+  }
+  .voodad-text .tag {
+    font-family: var(--font-display); font-weight: 600; font-style: italic;
+    font-size: 20px; color: var(--gold-bright); margin-bottom: 20px;
+  }
+  .voodad-text p {
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    color: rgba(255,255,255,0.78); margin: 0 0 28px; font-weight: 500;
+  }
+
+  /* ============= PROJECTS (4-up) =========================== */
+  .work-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-bottom: 48px;}
+  .work-card { display: flex; flex-direction: column; transition: transform 240ms;}
+  .work-card:hover { transform: translateY(-4px);}
+  .work-cover {
+    aspect-ratio: 3/4;
+    background: linear-gradient(170deg, #1B4F7A 0%, #10263D 65%, #08182a 100%);
+    border: 1px solid rgba(184,138,42,0.3);
+    box-shadow: 0 12px 30px rgba(16,38,61,0.18);
+    position: relative; overflow: hidden;
+    transition: box-shadow 240ms;
+  }
+  .work-card:hover .work-cover {
+    box-shadow: 0 18px 40px rgba(16,38,61,0.30), 0 0 32px rgba(184,138,42,0.15);
+  }
+  .work-cover::before {
+    content: ""; position: absolute; inset: 8px;
+    border: 1px solid rgba(212,162,62,0.18);
+    pointer-events: none;
+  }
+  .work-cover-inner {
+    position: absolute; inset: 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    text-align: center;
+  }
+  .work-cover-id {
+    font-family: var(--font-utility); font-size: 9px; font-weight: 700;
+    letter-spacing: 0.30em; text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+  .work-cover-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 22px; letter-spacing: 0.04em; line-height: 0.95;
+    text-transform: uppercase; color: #fff;
+    margin: 0;
+  }
+  .work-cover-rule { width: 32px; height: 1px; background: rgba(212,162,62,0.6); margin: 12px auto;}
+  .work-cover-stat {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 28px; letter-spacing: 0; line-height: 1.0;
+    color: var(--gold-bright);
+  }
+  .work-cover-stat small {
+    display: block; font-family: var(--font-utility); font-size: 9px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+    margin-top: 6px;
+  }
+  .work-meta { text-align: center; padding-top: 14px;}
+  .work-cat {
+    font-family: var(--font-utility); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--ember); margin-bottom: 4px;
+  }
+  .work-blurb {
+    font-family: var(--font-body); font-size: 14px; line-height: 1.4;
+    color: var(--ink-2); margin: 4px 0 0; font-weight: 500;
+  }
+
+  
+  /* ============= FEATURED PROJECT (Exorcise) =============== */
+  .featured-project {
+    display: grid; grid-template-columns: 5fr 7fr;
+    gap: 56px; align-items: center;
+    margin-bottom: 56px;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid var(--rule-strong);
+    box-shadow: 0 18px 40px rgba(16,38,61,0.10);
+    transition: transform 240ms, box-shadow 240ms;
+    color: var(--ink);
+  }
+  .featured-project:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px rgba(16,38,61,0.16);
+  }
+  .featured-project-art {
+    aspect-ratio: 4/3;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(184,138,42,0.20) 0%, transparent 60%),
+      linear-gradient(135deg, #1B4F7A 0%, #10263D 60%, #08182a 100%);
+    border: 1px solid rgba(212,162,62,0.4);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .featured-project-art::before {
+    content: ""; position: absolute; inset: 14px;
+    border: 1px solid rgba(212,162,62,0.20);
+  }
+  .featured-project-mark {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(40px, 5.6vw, 72px); letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--gold-bright);
+    line-height: 0.95; text-align: center;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+  .featured-project-mark span {
+    color: rgba(212,162,62,0.5); margin: 0 4px;
+    font-weight: 400;
+  }
+  .featured-project-mark small {
+    display: block; margin-top: 18px;
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.30em; color: rgba(255,255,255,0.65);
+    font-weight: 600;
+  }
+  .featured-eyebrow {
+    font-family: var(--font-utility); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.30em; text-transform: uppercase;
+    color: var(--ember); margin-bottom: 14px;
+  }
+  .featured-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(40px, 5vw, 60px); letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink);
+    line-height: 1.0; margin: 0 0 12px;
+  }
+  .featured-tag {
+    font-family: var(--font-display); font-weight: 600; font-style: italic;
+    font-size: 20px; color: var(--gold);
+    margin: 0 0 18px;
+  }
+  .featured-project-text p {
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    color: var(--ink-2); margin: 0 0 24px; font-weight: 500;
+  }
+  .featured-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-utility); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid var(--gold);
+  }
+  .work-grid--three { grid-template-columns: repeat(3, 1fr);}
+
+  @media (max-width: 880px) {
+    .featured-project { grid-template-columns: 1fr; gap: 28px; padding: 22px;}
+    .work-grid--three { grid-template-columns: repeat(2, 1fr);}
+  }
+
+  /* ============= BUTTONS =================================== */
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    border: 1.5px solid var(--ink); background: transparent;
+    font-family: var(--font-utility); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink);
+    transition: background 200ms, color 200ms;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--paper);}
+  .btn-outline-light {
+    border-color: rgba(255,255,255,0.6); color: #fff;
+  }
+  .btn-outline-light:hover { background: var(--gold-bright); border-color: var(--gold-bright); color: var(--ink);}
+  .center { text-align: center;}
+
+  /* ============= FOOTER =================================== */
+  .footer {
+    background: var(--hero-dark); color: #fff;
+    padding: 64px 0 32px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+  .footer-mark {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 28px; letter-spacing: 0.10em;
+    color: #fff; margin-bottom: 14px;
+  }
+  .footer-mark small {
+    display: block; font-family: var(--font-utility); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; color: rgba(255,255,255,0.55);
+    margin-top: 6px;
+  }
+  .footer-tag {
+    font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+    color: rgba(255,255,255,0.7); max-width: 360px; margin: 0;
+  }
+  .footer h5 {
+    font-family: var(--font-utility); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold-bright); margin: 0 0 16px;
+  }
+  .footer-list { list-style: none; padding: 0; margin: 0;}
+  .footer-list li { margin-bottom: 10px;}
+  .footer-list a {
+    font-family: var(--font-body); font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    transition: color 200ms;
+  }
+  .footer-list a:hover { color: var(--gold-bright);}
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 24px;
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-social {
+    display: flex; gap: 16px; align-items: center;
+    margin-top: 20px;
+  }
+  .footer-social a {
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.15); border-radius: 50%;
+    color: rgba(255,255,255,0.7);
+    transition: color 200ms, border-color 200ms, background 200ms;
+  }
+  .footer-social a:hover { color: var(--ink); background: var(--gold-bright); border-color: var(--gold-bright);}
+  .footer-social svg { width: 16px; height: 16px;}
+
+  /* ============= RESPONSIVE =============================== */
+  @media (max-width: 1024px) {
+    .nav-links { gap: 18px;}
+    .nav-link { font-size: 11px; letter-spacing: 0.12em;}
+  }
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; padding: 64px 0;}
+    .hero-feature { justify-self: center; max-width: 280px;}
+    .work-grid, .books-grid, .books-grid--three { grid-template-columns: repeat(2, 1fr);}
+    .about-grid, .voodad-grid { grid-template-columns: 1fr;}
+    .footer-grid { grid-template-columns: 1fr 1fr;}
+    .nav-links { display: none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================== 1. PROMO STRIP ============================== -->
+<div class="promo">
+  <div class="promo-inner">
+    <b>NEW:</b> The Emerald Door — Volume I, coming 2026
+    <a href="#books">READ MORE →</a>
+  </div>
+</div>
+
+<!-- ============================== 2. NAV ============================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#">
+      <span class="nav-mark-glyph">N</span>
+      NATHAN ESSEX
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link active" href="#books">Books</a>
+      <a class="nav-link" href="#newsletter">Newsletter</a>
+      <a class="nav-link" href="#podcast">Podcast</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#shop">Shop</a>
+    </div>
+    <div class="nav-social">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.55V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.12-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.52A3 3 0 00.5 6.2C0 8.07 0 12 0 12s0 3.93.5 5.8a3 3 0 002.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52A3 3 0 0023.5 17.8c.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 01-1.38-.9 3.71 3.71 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 00-2.13 1.38A5.87 5.87 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.87 5.87 0 001.38 2.13 5.87 5.87 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 002.13-1.38 5.87 5.87 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 00-1.38-2.13A5.87 5.87 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-11.85a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== 3. HERO ============================== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">Author · Strategist · Inventor</div>
+      <h1 class="hero-title">Stories &amp;<br>Instruments</h1>
+      <p class="hero-sub">
+        Fiction <span class="sep">|</span> Strategy
+        <span class="sep">|</span> Science <span class="sep">|</span> Service
+      </p>
+      <a class="hero-cta" href="#books">Read the new book →</a>
+    </div>
+
+    <div class="hero-feature">
+      <div class="hero-feature-tag">New &middot; Featured Release</div>
+      <div class="hero-feature-cover" style="background-image: url('assets/publishing/emerald_door_cover.png');"></div>
+      <div class="hero-feature-meta">
+        <strong>The Emerald Door</strong>
+        Volume I &middot; 2026
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== PROJECTS (LIGHT) ==============================  -->
+<section class="section section--light" id="projects">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-name">Projects</h2>
+      <p class="section-tagline">Strategy · Data · AI · Operations</p>
+      <p class="section-lede">
+        Selected work from the studio. Each engagement was scoped, measured, and left
+        behind a working instrument the team still runs.
+      </p>
+    </header>
+
+    <!-- Featured project: Exorcise -->
+    <a class="featured-project" href="#" aria-label="Exorcise — courage builder app">
+      <div class="featured-project-art">
+        <div class="featured-project-mark">
+          EX<span>·</span>OR<br>CISE
+          <small>Courage Builder · App</small>
+        </div>
+      </div>
+      <div class="featured-project-text">
+        <div class="featured-eyebrow">Featured Project</div>
+        <h3 class="featured-title">Exorcise</h3>
+        <div class="featured-tag">A courage builder for the anxious.</div>
+        <p>
+          A training app that combines neuroscience and sport psychology to help users
+          overcome anxiety — drilling the same skills elite athletes use to perform under
+          pressure, applied to everyday life.
+        </p>
+        <span class="featured-cta">Learn more →</span>
+      </div>
+    </a>
+
+    <!-- Supporting projects -->
+    <div class="work-grid work-grid--three">
+      <article class="work-card">
+        <div class="work-cover">
+          <div class="work-cover-inner">
+            <div class="work-cover-id">Banking · B2B</div>
+            <div>
+              <h3 class="work-cover-name">Pricing<br>Recovery</h3>
+              <div class="work-cover-rule"></div>
+              <div class="work-cover-stat">$10M<small>Recovered Margin</small></div>
+            </div>
+            <div class="work-cover-id">2025</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-cat">Pricing &amp; Credit</div>
+          <p class="work-blurb">A two-quarter restructure that held the floor.</p>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">
+          <div class="work-cover-inner">
+            <div class="work-cover-id">AI · Internal</div>
+            <div>
+              <h3 class="work-cover-name">AI Studio<br>OS</h3>
+              <div class="work-cover-rule"></div>
+              <div class="work-cover-stat">60+<small>Skills Shipped</small></div>
+            </div>
+            <div class="work-cover-id">2026</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-cat">AI Systems</div>
+          <p class="work-blurb">A working studio operating system, in production.</p>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">
+          <div class="work-cover-inner">
+            <div class="work-cover-id">Tableau · DAX</div>
+            <div>
+              <h3 class="work-cover-name">Sales<br>Dashboard</h3>
+              <div class="work-cover-rule"></div>
+              <div class="work-cover-stat">1<small>Source Of Truth</small></div>
+            </div>
+            <div class="work-cover-id">2024</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-cat">Sales Ops</div>
+          <p class="work-blurb">A governed pipeline the team opens on Mondays.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="center" style="margin-top: 16px;">
+      <a class="btn-outline" href="#">View All Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VOODAD — Podcast (DARK) ============================== -->
+<section class="section section--dark" id="podcast">
+  <div class="container">
+    <div class="voodad-grid">
+      <div class="voodad-art">
+        <div class="voodad-art-mark">
+          VOO<br>DAD
+          <small>The Podcast</small>
+        </div>
+      </div>
+      <div class="voodad-text">
+        <div class="hero-eyebrow" style="margin-bottom: 16px;">Podcast · The Workshop</div>
+        <h3>Voodad</h3>
+        <div class="tag">Long conversations with builders, operators, and tinkerers.</div>
+        <p>
+          A weekly show about the work itself — the unsexy middle of building things,
+          and the occasional screen-share teardown. New episodes on YouTube and your
+          podcast app of choice.
+        </p>
+        <a class="btn-outline btn-outline-light" href="#">Listen on YouTube →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== NEWSLETTER — Household Mojo (LIGHT) ============================== -->
+<section class="section section--light-alt" id="newsletter">
+  <div class="container">
+    <div class="news-card">
+      <div class="news-mark">Newsletter</div>
+      <h2 class="news-title">Household Mojo</h2>
+      <p class="news-tag">Home economics for the modern era.</p>
+      <p class="news-body">
+        Org design, management, and leadership principles, applied to parenting and
+        running a modern family. A separate practice from everything else on this site —
+        and the one most likely to change your week.
+      </p>
+      <a class="btn-substack" href="https://householdmojo.substack.com" target="_blank" rel="noopener">
+        Read on Substack →
+      </a>
+      <div class="news-meta">Hosted on Substack · Free to subscribe</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BOOKS (DARK) ============================== -->
+<section class="section section--dark" id="books">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-name">Books</h2>
+      <p class="section-tagline">Sufficiently Advanced Publishing</p>
+      <p class="section-lede">
+        Afrofuturist epics, mythic fantasy, and the occasional book of working magic.
+        A story's job is to leave the reader with one more door than they had before.
+      </p>
+    </header>
+
+    <div class="books-grid books-grid--three">
+      <article class="book">
+        <div class="book-cover" style="background-image: url('assets/publishing/emerald_door_cover.png');"></div>
+        <div class="book-cat">Novel · Published</div>
+        <p class="book-blurb">An afrofuturist epic in three movements.</p>
+      </article>
+      <article class="book">
+        <div class="book-cover" style="background-image: url('assets/publishing/landlord_cover.jpeg');"></div>
+        <div class="book-cat">Novelette · Published</div>
+        <p class="book-blurb">An urban fable about deeds and doors that don't lock.</p>
+      </article>
+      <article class="book">
+        <div class="book-cover" style="background-image: url('assets/publishing/goat_cover.png');"></div>
+        <div class="book-cat">Novel · Coming Soon</div>
+        <p class="book-blurb">A pastoral about appetite and inheritance.</p>
+      </article>
+    </div>
+
+    <div class="center">
+      <a class="btn-outline btn-outline-light" href="#">View All Books →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 4. ABOUT — narrative (LIGHT) ============================== -->
+<section class="section section--light" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/portrait/nathaniel_headshot.jpg" alt="Nathan Essex">
+      </div>
+      <div>
+        <div class="about-eyebrow">◈  About the Author</div>
+        <h2 class="about-title">Nathan Essex</h2>
+        <div class="about-body">
+          <p>
+            I grew up between worlds — a kid who took apart radios in the garage and read
+            paperbacks under the covers, raised by people who believed curiosity was a kind
+            of inheritance. I never quite picked a lane, and I stopped trying.
+          </p>
+          <p>
+            For most of my career I've worked in the unglamorous middle of things — banking,
+            data, operations — the rooms where a quiet decision made on a Tuesday becomes
+            somebody's whole year. I learned to love that work. I also learned that the
+            same instinct that makes someone good at it, the patience to sit with a question
+            until it shows you its real shape, is the same instinct that lets you write a
+            novel, raise a family, or build something that lasts longer than the meeting
+            it was born in.
+          </p>
+          <p>
+            These days the practice spans a few rooms. I write fiction in the early
+            mornings — long books with maps in the front. I work with operators on the
+            problems no one wants to put in a slide. And at home I'm a husband and a
+            father, which is, by a wide margin, the most interesting design problem I've
+            been handed.
+          </p>
+          <p>
+            Everything you'll find here is downstream of that. <em>Stories on one side,
+            instruments on the other</em>, and a working belief that the through-line
+            between them matters.
+          </p>
+          <div class="about-sign">— Nathan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (always dark) ============================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-mark">
+          NATHAN ESSEX
+          <small>Stories &amp; instruments</small>
+        </div>
+        <p class="footer-tag">
+          Fiction, strategy, and the practice of building things that compound — for
+          readers, operators, and anyone running a household worth running well.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.55V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.12-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.52A3 3 0 00.5 6.2C0 8.07 0 12 0 12s0 3.93.5 5.8a3 3 0 002.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52A3 3 0 0023.5 17.8c.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 01-1.38-.9 3.71 3.71 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 00-2.13 1.38A5.87 5.87 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.87 5.87 0 001.38 2.13 5.87 5.87 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 002.13-1.38 5.87 5.87 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 00-1.38-2.13A5.87 5.87 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-11.85a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul class="footer-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#podcast">Podcast</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#shop">Shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul class="footer-list">
+          <li><a href="#">Speaking</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Imprints</h5>
+        <ul class="footer-list">
+          <li><a href="#">Sufficiently Advanced</a></li>
+          <li><a href="https://householdmojo.substack.com">Household Mojo</a></li>
+          <li><a href="#">Voodad</a></li>
+          <li><a href="#" id="shop">The Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Nathan Essex · All rights reserved</div>
+      <div>Built in the workshop</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

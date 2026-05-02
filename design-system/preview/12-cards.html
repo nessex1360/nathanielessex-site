@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Card Components</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 28px; font-family: 'DM Sans',sans-serif;}
+  .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;}
+  .card { background: var(--obsidian-blue); padding: 22px;
+          border: 1px solid rgba(242, 199, 96, 0.55);
+          box-shadow: 0 0 0 1px rgba(242, 199, 96, 0.08), 0 0 18px rgba(242, 199, 96, 0.18);
+          min-height: 200px; display:flex; flex-direction:column; gap: 10px;}
+  .card.gold   { border-color: var(--aged-gold); box-shadow: 0 0 20px rgba(184,138,42,.30); transform: translateY(-2px);}
+  .card.violet { border-color: #6B3FA0; box-shadow: 0 0 20px rgba(107,63,160,.30); transform: translateY(-2px);}
+  .label { font-family:'DM Sans',sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash-silver);}
+  .title { font-family: 'Cinzel',serif; font-weight: 600; font-size: 16px; letter-spacing: 0.06em;
+           text-transform: uppercase; color: var(--signal-ivory); line-height: 1.2;}
+  .body  { font-family: 'Cormorant Garamond',serif; font-size: 14px; line-height: 1.5; color: var(--ash-silver); flex: 1;}
+  .meta  { font-family: 'DM Sans',sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aged-gold);}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <div class="label">◈ Case Study</div>
+      <div class="title">Pricing Recovery</div>
+      <div class="body">$10M revenue recovered through pricing restructure and credit controls.</div>
+      <div class="meta">Default state →</div>
+    </div>
+    <div class="card gold">
+      <div class="label">◈ Case Study</div>
+      <div class="title">Sales Dashboard</div>
+      <div class="body">Single source of truth for sales operations. Tableau · DAX · governed pipeline.</div>
+      <div class="meta">Hover state →</div>
+    </div>
+    <div class="card violet">
+      <div class="label">◈ Volume I</div>
+      <div class="title">Sufficiently Advanced</div>
+      <div class="body">An afrofuturist epic where ritual and machinery share a circuit.</div>
+      <div class="meta">Publishing variant →</div>
+    </div>
+  </div>
+</body>
+</html>

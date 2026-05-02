@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Core Palette</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 24px; font-family: var(--font-utility); color: var(--ash-silver);}
+  .grid { display:grid; grid-template-columns: repeat(7, 1fr); gap: 0; }
+  .sw { aspect-ratio: 1; display:flex; flex-direction:column; justify-content:flex-end; padding: 10px;
+        border:1px solid rgba(166,169,176,.15);}
+  .name { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; line-height:1.2;}
+  .hex  { font-size: 10px; letter-spacing: .04em; opacity:.65; margin-top:2px;}
+  .void  { background: #0A0A0D; color: #F3EEDF;}
+  .obsidian { background: #10263D; color: #F3EEDF;}
+  .atlas { background: #1B4F7A; color: #F3EEDF;}
+  .gold  { background: #B88A2A; color: #0A0A0D;}
+  .parch { background: #D8CFBF; color: #0A0A0D;}
+  .ash   { background: #A6A9B0; color: #0A0A0D;}
+  .ivory { background: #F3EEDF; color: #0A0A0D;}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="sw void"><div class="name">Void Black</div><div class="hex">#0A0A0D</div></div>
+    <div class="sw obsidian"><div class="name">Obsidian</div><div class="hex">#10263D</div></div>
+    <div class="sw atlas"><div class="name">Atlas</div><div class="hex">#1B4F7A</div></div>
+    <div class="sw gold"><div class="name">Aged Gold</div><div class="hex">#B88A2A</div></div>
+    <div class="sw parch"><div class="name">Parchment</div><div class="hex">#D8CFBF</div></div>
+    <div class="sw ash"><div class="name">Ash Silver</div><div class="hex">#A6A9B0</div></div>
+    <div class="sw ivory"><div class="name">Ivory</div><div class="hex">#F3EEDF</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,570 @@
+/**
+ * Paragon Design System — colors_and_type.css
+ * Brand: Paragon (nathanielessex.com)
+ *
+ * This file is the canonical token sheet for designing against the
+ * Paragon brand. Import once near the top of any HTML document.
+ *
+ * Three layers:
+ *   1. Foundation tokens — raw color, type, spacing, motion vars
+ *   2. Semantic tokens   — fg1/fg2/bg1/bg2/accent etc. + h1/h2/p/code
+ *   3. Utility classes   — .paragon-hero, .paragon-card, .paragon-cta…
+ *
+ * Master fonts (loaded via Google Fonts CDN):
+ *   Cinzel              — display / Roman monumental
+ *   Cormorant Garamond  — body / refined editorial serif
+ *   DM Sans             — utility / clean humanist sans
+ */
+
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* ============================================================
+   1. FOUNDATION — COLOR
+   ============================================================ */
+:root {
+
+  /* --- Core Paragon palette ------------------------------ */
+  --void-black:       #0A0A0D;  /* primary background — ceremony, depth   */
+  --obsidian-blue:    #10263D;  /* secondary background — cartographic    */
+  --atlas-blue:       #1B4F7A;  /* structural panels, professional        */
+  --aged-gold:        #B88A2A;  /* legacy accent, CTAs, headers, seals    */
+  --parchment-stone:  #D8CFBF;  /* soft neutral, editorial breathing      */
+  --ash-silver:       #A6A9B0;  /* secondary text, labels, metadata       */
+  --signal-ivory:     #F3EEDF;  /* primary text on dark fields            */
+
+  /* --- Professional accents (/portfolio) ----------------- */
+  --pro-accent-1:     #1B4F7A;  /* atlas blue                             */
+  --pro-accent-2:     #B88A2A;  /* aged gold                              */
+  --pro-accent-3:     #8A9AAD;  /* slate                                  */
+
+  /* --- Consulting accents (/tinkerers, Voodad) ----------- */
+  --con-accent-1:     #B88A2A;  /* aged gold                              */
+  --con-accent-2:     #A83228;  /* ember red — transformation, courage    */
+  --con-accent-3:     #C4764E;  /* terracotta — warmth, human             */
+
+  /* --- Publishing accents (/publishing) ------------------ */
+  --pub-accent-1:     #B88A2A;  /* aged gold                              */
+  --pub-accent-2:     #6B3FA0;  /* violet — magic, mythic                 */
+  --pub-accent-3:     #A83228;  /* ember red — intimacy                   */
+  --pub-accent-4:     #1A3A6A;  /* cosmic blue                            */
+
+  /* --- Functional / interactive -------------------------- */
+  --glow-gold:           rgba(184, 138, 42, 0.25);
+  --glow-gold-strong:    rgba(184, 138, 42, 0.45);
+  --glow-blue:           rgba(27, 79, 122, 0.20);
+  --glow-violet:         rgba(107, 63, 160, 0.25);
+  --glow-ember:          rgba(168,  50, 40, 0.25);
+  --border-engraved:     rgba(166, 169, 176, 0.15);
+  --border-gold:         rgba(184, 138, 42, 0.60);
+  --overlay-dark:        rgba(10, 10, 13, 0.55);
+  --overlay-obsidian:    rgba(16, 38, 61, 0.70);
+
+  /* --- Semantic (foreground / background) ---------------- */
+  --bg-1: var(--void-black);        /* page                          */
+  --bg-2: var(--obsidian-blue);     /* card / panel                  */
+  --bg-3: var(--atlas-blue);        /* structural emphasis surface   */
+  --fg-1: var(--signal-ivory);      /* primary text                  */
+  --fg-2: var(--ash-silver);        /* secondary text / labels       */
+  --fg-3: var(--parchment-stone);   /* editorial soft neutral        */
+  --accent-primary:   var(--aged-gold);
+  --accent-structure: var(--atlas-blue);
+  --accent-mythic:    var(--pub-accent-2);
+  --accent-courage:   var(--con-accent-2);
+  --link-color:       var(--atlas-blue);
+  --link-hover:       var(--aged-gold);
+  --divider:          var(--aged-gold);
+  --border-subtle:    var(--border-engraved);
+}
+
+/* ============================================================
+   2. FOUNDATION — TYPOGRAPHY
+   ============================================================ */
+:root {
+
+  /* --- Families ------------------------------------------ */
+  --font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  --font-body:    'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+  --font-utility: 'DM Sans', 'Inter', system-ui, sans-serif;
+
+  /* --- Size scale ---------------------------------------- */
+  --text-hero:      clamp(48px, 7vw, 80px);
+  --text-display:   clamp(36px, 5vw, 60px);
+  --text-h1:        clamp(28px, 3.5vw, 44px);
+  --text-h2:        clamp(22px, 2.5vw, 32px);
+  --text-h3:        20px;
+  --text-subhead:   clamp(20px, 2vw, 26px);
+  --text-body:      18px;
+  --text-body-sm:   16px;
+  --text-label:     13px;
+  --text-caption:   12px;
+  --text-micro:     11px;
+
+  /* --- Weights ------------------------------------------- */
+  --weight-display:   700;
+  --weight-heading:   600;
+  --weight-subhead:   600;
+  --weight-body:      400;
+  --weight-utility:   500;
+  --weight-utility-r: 400;
+
+  /* --- Leading ------------------------------------------- */
+  --leading-tight:   0.95;
+  --leading-heading: 1.10;
+  --leading-subhead: 1.30;
+  --leading-body:    1.65;
+  --leading-utility: 1.40;
+
+  /* --- Tracking ------------------------------------------ */
+  --tracking-display: 0.02em;
+  --tracking-heading: 0.08em;
+  --tracking-label:   0.12em;
+  --tracking-body:    0.01em;
+  --tracking-mark:    0.15em;  /* P A R A G O N wordmark        */
+}
+
+/* ============================================================
+   3. FOUNDATION — SPACING (4pt base)
+   ============================================================ */
+:root {
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10: 128px;
+  --space-11: 192px;
+  --space-12: 256px;
+
+  --section-pad-y: clamp(64px, 8vw, 128px);
+  --section-pad-x: clamp(24px, 6vw, 96px);
+
+  --max-content: 1280px;
+  --max-prose:    720px;
+  --max-card:     420px;
+}
+
+/* ============================================================
+   4. FOUNDATION — BORDER & RADIUS
+   ============================================================ */
+:root {
+  --border-width-fine: 1px;
+  --border-width-mid:  2px;
+
+  --border-style-engraved: 1px solid var(--border-engraved);
+  --border-style-gold:     1px solid var(--border-gold);
+  --border-style-atlas:    1px solid var(--atlas-blue);
+
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:   16px;
+  --radius-pill: 999px;
+  --radius-none:   0px;   /* Paragon default — sharp geometry */
+}
+
+/* ============================================================
+   5. FOUNDATION — SHADOW & GLOW
+   ============================================================ */
+:root {
+  --shadow-glow-gold:        0 0 20px var(--glow-gold);
+  --shadow-glow-gold-inset:  inset 0 0 12px var(--glow-gold);
+  --shadow-glow-gold-strong: 0 0 32px var(--glow-gold-strong);
+  --shadow-text-gold:        0 0 40px rgba(184, 138, 42, 0.30);
+  --shadow-glow-blue:        0 0 24px var(--glow-blue);
+  --shadow-glow-violet:      0 0 20px var(--glow-violet);
+  --shadow-glow-ember:       0 0 20px var(--glow-ember);
+  --shadow-panel-blue:       0 4px 24px rgba(16, 38, 61, 0.60);
+  --shadow-card:             0 2px 12px rgba(10, 10, 13, 0.50);
+  --shadow-card-hover:       0 8px 32px rgba(10, 10, 13, 0.70);
+  --shadow-text-bevel:
+    1px 1px 0px rgba(255, 255, 255, 0.04),
+   -1px -1px 0px rgba(  0,   0,   0, 0.40),
+    0   0   40px rgba(184, 138,  42, 0.20);
+}
+
+/* ============================================================
+   6. FOUNDATION — MOTION
+   ============================================================ */
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-page: 600ms;
+
+  --ease-stately:  cubic-bezier(0.25, 0.1, 0.25, 1); /* Paragon default     */
+  --ease-standard: cubic-bezier(0.4,  0,   0.2,  1); /* material standard   */
+  --ease-enter:    cubic-bezier(0.0,  0,   0.2,  1);
+  --ease-exit:     cubic-bezier(0.4,  0,   1.0,  1);
+
+  --transition-card:
+    border-color var(--duration-base) var(--ease-stately),
+    box-shadow   var(--duration-base) var(--ease-stately),
+    transform    var(--duration-base) var(--ease-stately);
+
+  --transition-cta:
+    box-shadow var(--duration-base) var(--ease-stately),
+    color      var(--duration-base) var(--ease-stately);
+
+  --transition-link:
+    color   var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard);
+}
+
+/* ============================================================
+   7. EXPRESSION OVERRIDES
+   Add data-expression="professional|consulting|publishing"
+   ============================================================ */
+[data-expression="professional"] {
+  --expr-accent-primary:    var(--pro-accent-1);
+  --expr-accent-secondary:  var(--pro-accent-2);
+  --expr-accent-tertiary:   var(--pro-accent-3);
+  --expr-card-hover-glow:   var(--shadow-glow-blue);
+  --expr-bg-gradient:       var(--void-black);
+}
+[data-expression="consulting"] {
+  --expr-accent-primary:    var(--con-accent-1);
+  --expr-accent-secondary:  var(--con-accent-2);
+  --expr-accent-tertiary:   var(--con-accent-3);
+  --expr-card-hover-glow:   var(--shadow-glow-gold-strong);
+  --expr-bg-gradient:
+    linear-gradient(160deg, var(--void-black) 0%, var(--obsidian-blue) 100%);
+}
+[data-expression="publishing"] {
+  --expr-accent-primary:    var(--pub-accent-1);
+  --expr-accent-secondary:  var(--pub-accent-2);
+  --expr-accent-tertiary:   var(--pub-accent-3);
+  --expr-accent-deep:       var(--pub-accent-4);
+  --expr-card-hover-glow:   var(--shadow-glow-violet);
+  --expr-bg-gradient:
+    linear-gradient(160deg, var(--void-black) 0%, var(--pub-accent-4) 100%);
+}
+
+/* ============================================================
+   7b. PARCHMENT (LIGHT) MODE
+   Add data-mode="parchment" to BODY SECTIONS to flip into
+   the Jack-Carr / Scott-Mann cream-paper feel. Hero stays dark.
+   ============================================================ */
+[data-mode="parchment"] {
+  --bg-1: #F3EEDF;          /* signal ivory becomes the page    */
+  --bg-2: #FFFFFF;          /* card on parchment                */
+  --bg-3: #E8DFC7;          /* tonal panel on parchment         */
+  --fg-1: #10263D;          /* obsidian becomes the body color  */
+  --fg-2: #5A6470;          /* slate secondary                  */
+  --fg-3: #1B4F7A;          /* atlas blue accent text           */
+  --link-color: #1B4F7A;
+  --link-hover: #B88A2A;
+  --divider:  #B88A2A;
+  --border-subtle: rgba(16, 38, 61, 0.12);
+  --border-engraved: rgba(16, 38, 61, 0.12);
+}
+
+/* ============================================================
+   8. SEMANTIC ELEMENT STYLES
+   Bare-element styles applied when .paragon-page wraps content.
+   ============================================================ */
+
+.paragon-page {
+  background-color: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+}
+
+.paragon-page h1 {
+  font-family: var(--font-display);
+  font-size:   var(--text-h1);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--fg-1);
+  margin: 0 0 var(--space-5);
+}
+.paragon-page h2 {
+  font-family: var(--font-display);
+  font-size:   var(--text-h2);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--fg-1);
+  margin: 0 0 var(--space-4);
+}
+.paragon-page h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--fg-1);
+  margin: 0 0 var(--space-3);
+}
+.paragon-page p {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--fg-1);
+  margin: 0 0 var(--space-4);
+  text-wrap: pretty;
+}
+.paragon-page small,
+.paragon-page .caption {
+  font-family: var(--font-utility);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+.paragon-page a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-link);
+}
+.paragon-page a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+.paragon-page code,
+.paragon-page kbd,
+.paragon-page pre {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.92em;
+  color: var(--parchment-stone);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+}
+.paragon-page hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--divider);
+  opacity: 0.40;
+  border: none;
+  margin: var(--space-7) 0;
+}
+
+/* ============================================================
+   9. UTILITY / COMPONENT CLASSES
+   ============================================================ */
+
+.paragon-hero {
+  font-family: var(--font-display);
+  font-size:   var(--text-hero);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-mark);
+  color: var(--fg-1);
+  text-shadow: var(--shadow-text-bevel);
+  text-transform: uppercase;
+}
+.paragon-display {
+  font-family: var(--font-display);
+  font-size:   var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+.paragon-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+.paragon-heading-glow {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--fg-1);
+  text-shadow: var(--shadow-text-gold);
+}
+.paragon-subhead {
+  font-family: var(--font-body);
+  font-size: var(--text-subhead);
+  font-weight: var(--weight-subhead);
+  line-height: var(--leading-subhead);
+  color: var(--fg-1);
+}
+.paragon-subhead-italic {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--text-subhead);
+  color: var(--fg-2);
+}
+.paragon-body {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--fg-1);
+}
+.paragon-label {
+  font-family: var(--font-utility);
+  font-size: var(--text-label);
+  font-weight: var(--weight-utility);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.paragon-gold  { color: var(--aged-gold); }
+.paragon-muted { color: var(--ash-silver); }
+.paragon-ivory { color: var(--signal-ivory); }
+.paragon-ember { color: var(--con-accent-2); }
+.paragon-violet{ color: var(--pub-accent-2); }
+
+.paragon-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--divider);
+  opacity: 0.40;
+  border: none;
+  margin: var(--space-7) 0;
+}
+.paragon-divider-tick {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--aged-gold);
+  letter-spacing: var(--tracking-label);
+  font-family: var(--font-utility);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+}
+.paragon-divider-tick::before,
+.paragon-divider-tick::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--aged-gold);
+  opacity: 0.40;
+}
+
+/* --- Card -------------------------------------------------- */
+.paragon-card {
+  background-color: var(--bg-2);
+  border: var(--border-style-engraved);
+  border-radius: var(--radius-none);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-card);
+  padding: var(--space-6);
+}
+.paragon-card:hover {
+  border-color: var(--aged-gold);
+  box-shadow: var(--shadow-card-hover), var(--shadow-glow-gold);
+  transform: translateY(-4px);
+}
+.paragon-book-card {
+  background-color: var(--bg-2);
+  border: var(--border-style-engraved);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-card);
+}
+.paragon-book-card:hover {
+  border-color: var(--pub-accent-2);
+  box-shadow: var(--shadow-card-hover), var(--shadow-glow-violet);
+  transform: translateY(-4px);
+}
+.paragon-transform-card {
+  background-color: var(--bg-2);
+  border: var(--border-style-engraved);
+  transition: var(--transition-card);
+}
+.paragon-transform-card:hover {
+  border-color: var(--con-accent-2);
+  box-shadow: var(--shadow-card-hover), var(--shadow-glow-ember);
+  transform: translateY(-4px);
+}
+
+/* --- CTA --------------------------------------------------- */
+.paragon-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  color: var(--aged-gold);
+  border: var(--border-style-gold);
+  background: transparent;
+  border-radius: var(--radius-none);
+  font-family: var(--font-utility);
+  font-size: var(--text-label);
+  font-weight: var(--weight-utility);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-cta);
+}
+.paragon-cta:hover {
+  box-shadow: var(--shadow-glow-gold);
+  color: var(--signal-ivory);
+}
+.paragon-cta--solid {
+  background: var(--aged-gold);
+  color: var(--void-black);
+}
+.paragon-cta--solid:hover {
+  background: var(--signal-ivory);
+  color: var(--void-black);
+  box-shadow: var(--shadow-glow-gold-strong);
+}
+
+/* --- Tag --------------------------------------------------- */
+.paragon-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--obsidian-blue);
+  color: var(--ash-silver);
+  border: var(--border-style-engraved);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-utility);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* --- Drop cap (publishing only) ---------------------------- */
+.paragon-drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 4em;
+  font-weight: var(--weight-display);
+  float: left;
+  line-height: 0.8;
+  margin: 0.05em 0.12em 0 0;
+  color: var(--aged-gold);
+}
+
+/* --- Frame: engraved panel (map-room style) ---------------- */
+.paragon-frame {
+  position: relative;
+  padding: var(--space-6);
+  border: var(--border-style-engraved);
+  background: var(--bg-2);
+}
+.paragon-frame::before,
+.paragon-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--aged-gold);
+  opacity: 0.6;
+}
+.paragon-frame::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.paragon-frame::after  { bottom: -1px; right: -1px; border-left: none; border-top: none; }

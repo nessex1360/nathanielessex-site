@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paragon Design System</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  :root { color-scheme: dark;}
+  html, body { margin: 0; padding: 0;}
+  body {
+    background: var(--void-black);
+    color: var(--signal-ivory);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  *, *::before, *::after { box-sizing: border-box;}
+  a { color: inherit; text-decoration: none;}
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 var(--space-7);}
+
+  /* Hero band */
+  .head {
+    position: relative;
+    padding: var(--space-9) 0 var(--space-7);
+    border-bottom: 1px solid var(--border-engraved);
+    overflow: hidden;
+  }
+  .head-bg {
+    position: absolute; inset: 0;
+    background: url("assets/backgrounds/homepage_cartography.png") center/cover no-repeat;
+    opacity: 0.22;
+  }
+  .head-bg::after {
+    content:""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(10,10,13,0.4) 0%, rgba(10,10,13,1) 80%);
+  }
+  .head > .container { position: relative;}
+  .eyebrow { font-family: var(--font-utility); font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--aged-gold); margin: 0 0 var(--space-4);}
+  .wordmark { font-family: var(--font-display); font-weight: 800; font-size: clamp(48px, 7vw, 84px); letter-spacing: 0.18em; text-transform: uppercase; color: var(--signal-ivory); text-shadow: var(--shadow-text-bevel); margin: 0; padding-left: 0.18em;}
+  .tagline { font-family: var(--font-body); font-style: italic; font-size: 22px; color: var(--parchment-stone); margin: var(--space-5) 0 0; max-width: 620px;}
+  .rule { width: 96px; height: 1px; background: var(--aged-gold); opacity: 0.7; margin: var(--space-6) 0 0;}
+
+  /* Section */
+  .section { padding: var(--space-8) 0;}
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-3);}
+  .sec-eyebrow { font-family: var(--font-utility); font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--aged-gold);}
+  .sec-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3vw, 36px); letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal-ivory); margin: var(--space-2) 0 0;}
+  .sec-lede { font-family: var(--font-body); font-size: 17px; color: var(--parchment-stone); max-width: 520px; margin: 0;}
+
+  /* Kit cards */
+  .kits { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5);}
+  .kit {
+    position: relative;
+    background: var(--obsidian-blue);
+    border: 1px solid var(--border-engraved);
+    padding: var(--space-7);
+    transition: all 300ms var(--ease-stately);
+    display: flex; flex-direction: column; gap: var(--space-4);
+    overflow: hidden;
+  }
+  .kit::before, .kit::after { content: ""; position: absolute; width: 14px; height: 14px; border: 1px solid rgba(184,138,42,0); transition: border-color 300ms var(--ease-stately);}
+  .kit::before { top: 4px; left: 4px;  border-right: none; border-bottom: none;}
+  .kit::after  { bottom: 4px; right: 4px; border-left: none; border-top: none;}
+  .kit:hover { transform: translateY(-4px); border-color: var(--aged-gold);}
+  .kit:hover::before, .kit:hover::after { border-color: var(--aged-gold);}
+  .kit--professional:hover { box-shadow: 0 8px 32px rgba(10,10,13,0.7), 0 0 24px rgba(27,79,122,0.40);}
+  .kit--consulting:hover   { box-shadow: 0 8px 32px rgba(10,10,13,0.7), 0 0 24px rgba(184,138,42,0.40);}
+  .kit--publishing:hover   { box-shadow: 0 8px 32px rgba(10,10,13,0.7), 0 0 24px rgba(107,63,160,0.45);}
+
+  .kit-tag { font-family: var(--font-utility); font-size: 10px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--aged-gold);}
+  .kit-title { font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal-ivory); line-height: 1.15; margin: 0;}
+  .kit-blurb { font-family: var(--font-body); font-size: 16px; line-height: 1.55; color: var(--parchment-stone); flex: 1; margin: 0;}
+  .kit-foot { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-3); border-top: 1px solid var(--border-engraved);}
+  .kit-swatches { display: flex; gap: 6px;}
+  .kit-swatches span { width: 14px; height: 14px; border: 1px solid rgba(166,169,176,.25);}
+  .kit-link { font-family: var(--font-utility); font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--aged-gold);}
+
+  /* Document cards */
+  .docs { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-5);}
+  .doc {
+    padding: var(--space-6);
+    background: rgba(16,38,61,0.40);
+    border: 1px solid var(--border-engraved);
+    transition: all 300ms var(--ease-stately);
+    display: flex; flex-direction: column; gap: var(--space-3);
+  }
+  .doc:hover { border-color: var(--aged-gold); transform: translateY(-2px);}
+  .doc-tag { font-family: var(--font-utility); font-size: 10px; letter-spacing: 0.30em; text-transform: uppercase; color: var(--aged-gold);}
+  .doc-title { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal-ivory); margin: 0;}
+  .doc-blurb { font-family: var(--font-body); font-size: 15px; line-height: 1.5; color: var(--parchment-stone); margin: 0;}
+
+  /* Footer */
+  .foot { border-top: 1px solid var(--border-engraved); padding: var(--space-6) 0; margin-top: var(--space-7);}
+  .foot-inner { display: flex; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap;
+                font-family: var(--font-utility); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ash-silver);}
+
+  @media (max-width: 880px) {
+    .kits, .docs { grid-template-columns: 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-bg" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">◈  Design System  ·  Nathaniel Essex</p>
+    <h1 class="wordmark">PARAGON</h1>
+    <p class="tagline">
+      Legacy through transformation. The brand system for nathanielessex.com — its tokens,
+      voice, components, and three audience-facing expressions in one canonical place.
+    </p>
+    <div class="rule"></div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">◈  Section I  ·  Three Expressions</div>
+        <h2 class="sec-title">UI Kits</h2>
+      </div>
+      <p class="sec-lede">One brand, three voices. Each kit is a working hi-fi reference page using only tokens and patterns from this system.</p>
+    </div>
+
+    <div class="kits">
+      <a class="kit kit--professional" href="ui_kits/portfolio/index.html">
+        <div class="kit-tag">◈  Professional</div>
+        <h3 class="kit-title">Portfolio</h3>
+        <p class="kit-blurb">nathanielessex.com /portfolio — case studies, capabilities matrix, professional bio. Atlas blue + gold. Maximum restraint.</p>
+        <div class="kit-foot">
+          <div class="kit-swatches" aria-hidden="true">
+            <span style="background:#0A0A0D"></span>
+            <span style="background:#1B4F7A"></span>
+            <span style="background:#B88A2A"></span>
+            <span style="background:#F3EEDF"></span>
+          </div>
+          <div class="kit-link">Open kit →</div>
+        </div>
+      </a>
+
+      <a class="kit kit--consulting" href="ui_kits/voodad/index.html">
+        <div class="kit-tag">◈  Consulting</div>
+        <h3 class="kit-title">Voodad</h3>
+        <p class="kit-blurb">/tinkerers — the consulting practice. Three offerings, the alchemy diagram, the dispatch newsletter. Aged gold + ember + terracotta.</p>
+        <div class="kit-foot">
+          <div class="kit-swatches" aria-hidden="true">
+            <span style="background:#0A0A0D"></span>
+            <span style="background:#B88A2A"></span>
+            <span style="background:#A83228"></span>
+            <span style="background:#C4764E"></span>
+          </div>
+          <div class="kit-link">Open kit →</div>
+        </div>
+      </a>
+
+      <a class="kit kit--publishing" href="ui_kits/publishing/index.html">
+        <div class="kit-tag">◈  Publishing</div>
+        <h3 class="kit-title">Sufficiently Advanced</h3>
+        <p class="kit-blurb">/publishing — the book imprint. Catalog, excerpt with drop cap, world atlas, readers' guild signup. Gold + mythic violet + cosmic blue.</p>
+        <div class="kit-foot">
+          <div class="kit-swatches" aria-hidden="true">
+            <span style="background:#0A0A0D"></span>
+            <span style="background:#1A3A6A"></span>
+            <span style="background:#6B3FA0"></span>
+            <span style="background:#B88A2A"></span>
+          </div>
+          <div class="kit-link">Open kit →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-eyebrow">◈  Section II  ·  System Documents</div>
+        <h2 class="sec-title">The Spec</h2>
+      </div>
+      <p class="sec-lede">All sixteen brand specimen cards live in the Design System tab; the prose lives here.</p>
+    </div>
+
+    <div class="docs">
+      <a class="doc" href="README.md">
+        <div class="doc-tag">◈  Markdown</div>
+        <h3 class="doc-title">README — full brand context</h3>
+        <p class="doc-blurb">Sources used, content fundamentals, visual foundations, iconography, and how to apply the system.</p>
+      </a>
+      <a class="doc" href="SKILL.md">
+        <div class="doc-tag">◈  Markdown</div>
+        <h3 class="doc-title">SKILL — agent skill prompt</h3>
+        <p class="doc-blurb">Front-matter manifest for Claude Code agents: when to invoke Paragon, what to read first, decision trees, and the component vocabulary.</p>
+      </a>
+      <a class="doc" href="colors_and_type.css">
+        <div class="doc-tag">◈  CSS</div>
+        <h3 class="doc-title">colors_and_type.css — single import</h3>
+        <p class="doc-blurb">Tokens (color, type, spacing, motion), semantic styles, and reusable utility classes. Link this once and the whole system flows in.</p>
+      </a>
+      <a class="doc" href="preview/01-wordmark.html">
+        <div class="doc-tag">◈  Specimen</div>
+        <h3 class="doc-title">Preview cards</h3>
+        <p class="doc-blurb">Sixteen specimen artboards covering wordmark, palettes, type, spacing, components, voice, and iconography.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot-inner">
+    <div>PARAGON  ·  Design System  ·  v1.0</div>
+    <div>© 2026  ·  Nathaniel Essex  ·  Legacy through transformation</div>
+  </div>
+</footer>
+
+</body>
+</html>

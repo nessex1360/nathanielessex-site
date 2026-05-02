@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Expression Accents</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 22px; font-family: var(--font-utility);}
+  .row { display:grid; grid-template-columns: 110px 1fr; gap:14px; align-items:center; padding: 10px 0;
+         border-bottom: 1px solid rgba(166,169,176,.15);}
+  .row:last-child { border-bottom: none;}
+  .label {
+    font-family: var(--font-utility);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F2C760;
+    text-shadow: 0 0 12px rgba(242, 199, 96, 0.35);
+  }
+  .swatches { display:flex; gap: 0;}
+  .sw { flex:1; height: 56px; display:flex; align-items:flex-end; padding: 6px 8px;
+        font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;}
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="label">Professional</div>
+    <div class="swatches">
+      <div class="sw" style="background:#1B4F7A;color:#F3EEDF;">Atlas · #1B4F7A</div>
+      <div class="sw" style="background:#B88A2A;color:#0A0A0D;font-weight:700;">Aged Gold · #B88A2A</div>
+      <div class="sw" style="background:#8A9AAD;color:#0A0A0D;">Slate · #8A9AAD</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">Consulting</div>
+    <div class="swatches">
+      <div class="sw" style="background:#B88A2A;color:#0A0A0D;">Aged Gold</div>
+      <div class="sw" style="background:#A83228;color:#F3EEDF;">Ember · #A83228</div>
+      <div class="sw" style="background:#C4764E;color:#0A0A0D;">Terracotta · #C4764E</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">Publishing</div>
+    <div class="swatches">
+      <div class="sw" style="background:#B88A2A;color:#0A0A0D;">Aged Gold</div>
+      <div class="sw" style="background:#6B3FA0;color:#F3EEDF;">Violet · #6B3FA0</div>
+      <div class="sw" style="background:#A83228;color:#F3EEDF;">Ember</div>
+      <div class="sw" style="background:#1A3A6A;color:#F3EEDF;">Cosmic · #1A3A6A</div>
+    </div>
+  </div>
+</body>
+</html>

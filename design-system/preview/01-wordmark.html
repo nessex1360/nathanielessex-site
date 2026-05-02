@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Essex — Wordmark</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--void-black);
+    height: 280px;
+    width: 700px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    font-family: var(--font-utility);
+  }
+  .stage {
+    position: relative;
+    text-align: center;
+    padding: 0 var(--space-7);
+  }
+  .mark {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--signal-ivory);
+    letter-spacing: 0.30em;
+    text-shadow: var(--shadow-text-bevel);
+    margin-right: -0.30em; /* compensate trailing letter-spacing */
+  }
+  .tagline {
+    margin-top: 14px;
+    color: var(--ash-silver);
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    line-height: 1.55;
+  }
+  .tagline .attr {
+    display: block;
+    margin-top: 4px;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aged-gold);
+  }
+  .rule {
+    margin: 18px auto 0;
+    width: 120px; height: 1px;
+    background: var(--aged-gold);
+    opacity: 0.6;
+  }
+  .corner { position:absolute; width:14px; height:14px; border:1px solid var(--aged-gold); opacity:.7;}
+  .corner.tl { top: 30px; left: 28px; border-right: none; border-bottom: none;}
+  .corner.tr { top: 30px; right: 28px; border-left: none; border-bottom: none;}
+  .corner.bl { bottom: 30px; left: 28px; border-right: none; border-top: none;}
+  .corner.br { bottom: 30px; right: 28px; border-left: none; border-top: none;}
+</style>
+</head>
+<body>
+  <span class="corner tl"></span><span class="corner tr"></span>
+  <span class="corner bl"></span><span class="corner br"></span>
+  <div class="stage">
+    <div class="mark">ESSEX</div>
+    <div class="rule"></div>
+    <div class="tagline">“From one thing, ten thousand things.”<span class="attr">&mdash; Miyamoto Musashi</span></div>
+  </div>
+</body>
+</html>

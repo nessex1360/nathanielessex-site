@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Voice Principles</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 32px;}
+  .lede { font-family:'Cinzel',serif; font-size: 16px; letter-spacing:.18em; text-transform: uppercase;
+          color: var(--aged-gold); margin-bottom: 6px;}
+  .pull { font-family:'Cormorant Garamond',serif; font-style: italic; font-weight: 500;
+          color: var(--signal-ivory); font-size: 22px; line-height: 1.40;
+          padding: 6px 0 22px; border-bottom: 1px solid rgba(184,138,42,.4); margin-bottom: 22px;}
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px 28px;}
+  .col-title { font-family:'DM Sans',sans-serif; font-size: 10px; letter-spacing:.18em;
+               text-transform: uppercase; color: var(--ash-silver); margin-bottom: 10px;}
+  .col-title.do { color: var(--aged-gold);}
+  .col-title.dont { color: #C4764E;}
+  ul { list-style: none; margin: 0; padding: 0;}
+  li { font-family:'Cormorant Garamond',serif; font-size: 15px; line-height: 1.5;
+       color: var(--signal-ivory); padding-left: 18px; position: relative; margin-bottom: 8px;}
+  li::before { content: "◈"; position: absolute; left: 0; top: 0; color: var(--aged-gold); font-size: 10px;}
+  li.dont::before { content: "×"; color: #C4764E;}
+</style>
+</head>
+<body>
+  <div class="lede">◈ Voice</div>
+  <div class="pull">"The science must feel like magic, and the magic must remain operationally clear."</div>
+  <div class="grid">
+    <div>
+      <div class="col-title do">Do</div>
+      <ul>
+        <li>Stately. Direct. Service-first.</li>
+        <li>Lead with mission, then mechanism.</li>
+        <li>Foreground numerals in gold.</li>
+        <li>First person — "I built…"</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title dont">Avoid</div>
+      <ul>
+        <li class="dont">Emoji of any kind.</li>
+        <li class="dont">"World-class," "revolutionary."</li>
+        <li class="dont">"Hey," "Let's dive in."</li>
+        <li class="dont">LinkedIn-style superlatives.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Semantic Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body { background: var(--void-black); width:700px; padding: 24px; font-family: var(--font-utility);}
+  .grid { display:grid; grid-template-columns: repeat(2,1fr); gap: 14px;}
+  .row { display:flex; align-items:center; gap: 14px;}
+  .chip { width: 44px; height: 44px; border:1px solid rgba(166,169,176,.20); flex-shrink: 0;}
+  .meta { display:flex; flex-direction:column; gap: 2px;}
+  .name { font-size: 11px; letter-spacing:.12em; text-transform:uppercase; color: var(--ash-silver);}
+  .role { font-family: var(--font-body); font-size: 14px; color: var(--signal-ivory);}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="row"><div class="chip" style="background:#0A0A0D"></div><div class="meta"><div class="name">--bg-1</div><div class="role">Page surface</div></div></div>
+    <div class="row"><div class="chip" style="background:#10263D"></div><div class="meta"><div class="name">--bg-2</div><div class="role">Card / panel</div></div></div>
+    <div class="row"><div class="chip" style="background:#F3EEDF"></div><div class="meta"><div class="name">--fg-1</div><div class="role">Primary text</div></div></div>
+    <div class="row"><div class="chip" style="background:#A6A9B0"></div><div class="meta"><div class="name">--fg-2</div><div class="role">Labels · meta</div></div></div>
+    <div class="row"><div class="chip" style="background:#B88A2A"></div><div class="meta"><div class="name">--accent-primary</div><div class="role">Gold legacy mark</div></div></div>
+    <div class="row"><div class="chip" style="background:#1B4F7A"></div><div class="meta"><div class="name">--accent-structure</div><div class="role">Links · panels</div></div></div>
+    <div class="row"><div class="chip" style="background:#6B3FA0"></div><div class="meta"><div class="name">--accent-mythic</div><div class="role">Publishing only</div></div></div>
+    <div class="row"><div class="chip" style="background:#A83228"></div><div class="meta"><div class="name">--accent-courage</div><div class="role">Consulting only</div></div></div>
+  </div>
+</body>
+</html>
