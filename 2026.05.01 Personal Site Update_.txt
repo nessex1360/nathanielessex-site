@@ -1,0 +1,64 @@
+## 2026.05.01 Personal Site Update_v1
+
+### Navigation
+- Replace “Nathaniel Essex” in the navbar with a simple circular **E** logo.
+- Keep nav links: **Books, Newsletter, Podcast, Projects, Shop**.
+- Remove the **X/Twitter** icon.
+- Add icons/links for **YouTube, Instagram, and Substack**.
+- Update the homepage book promo text to **“New: The Emerald Door. Available now.”**
+- Make **“Read more”** link to the Amazon page for *The Emerald Door*.
+- Remove **“Volume One”** anywhere it appears for *The Emerald Door*.
+
+### Hero section
+- Change headline to **“Nathan Essex: Stories and Inventions”**.
+- Change subheadline to **“Author Strategist Inventor”**.
+- Remove old **“stories and instruments”** / prior mixed messaging.
+- Feature the **exercise app** in the hero image.
+- Change primary CTA to **“Join the Wait List”** for the exercise app.
+
+### Projects section
+- Keep the section name **Projects**.
+- Show **only the exercise app**.
+- Remove the other three project cards/showcases.
+- Keep **“View all projects”** or **“View case studies”** link.
+
+### Podcast section
+- Rename podcast from **“Voodad”** to **“Exercise with Voodad”**.
+- Use the **Exercise** logo.
+- Replace description copy with the same copy used on the **Substack page**.
+- Set CTA to **“Listen on YouTube”**.
+
+### Books section
+- Keep the books section overall structure.
+- Do **not** show “Published” labels.
+- Only **The Goat** should have gold highlight text: **“Coming Soon”**.
+- Update captions:
+  - **Death of a Landlord** → “An afrofuturism space opera”
+  - **The Emerald Door** → “An aspirational portal fantasy”
+  - **The Goat** → “An unwelcome encounter with Vikings”
+
+### About section
+- Change heading to **“Who is Nathan Essex”**.
+- Replace bio with a tighter, less whimsical version.
+- Use professional descriptor: **“MBA, fintech strategist, author and inventor.”**
+- Include these bio points:
+  - Raised by **Caribbean Catholic military engineers**
+  - He was **the artist in the family**
+  - Has **10+ years in corporate finance**
+  - A **Renaissance man**, including orchestral musician and family man
+  - Core strength is **far transfer** across interdisciplinary domains
+  - Has helped **startups become full enterprises**
+  - Has built businesses from scratch
+  - Has worked inside major international logistics companies
+  - Is dedicated to **service** and being a **useful citizen**
+
+### Footer / misc
+- Keep **Speaking, Press Kit, Contact** links.
+- Remove the broader imprint setup.
+- Keep only these imprints:
+  - **Sufficiently Advanced**
+  - **Household Mojo**
+
+If you want, I can turn this into:
+1. a **clean implementation brief for Claude Code**, or  
+2. a **copy-paste prompt** you can give Claude Code directly.

@@ -206,6 +206,30 @@
     color: #fff;
     margin-bottom: 6px;
   }
+  .hero-feature-app {
+    display: flex; align-items: center; justify-content: center;
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(184,138,42,0.25) 0%, transparent 60%),
+      linear-gradient(135deg, #1B4F7A 0%, #10263D 60%, #08182a 100%);
+    position: relative;
+  }
+  .hero-feature-app::before {
+    content: ""; position: absolute; inset: 12px;
+    border: 1px solid rgba(212,162,62,0.25);
+  }
+  .hero-app-mark {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(28px, 4vw, 44px); letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold-bright);
+    text-align: center; line-height: 1.0;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+  .hero-app-mark small {
+    display: block; margin-top: 14px;
+    font-family: var(--font-utility); font-size: 11px;
+    letter-spacing: 0.30em; color: rgba(255,255,255,0.7);
+    font-weight: 600;
+  }
 
   /* ============= SECTIONS — common ========================= */
   .section { padding: 100px 0;}
@@ -299,8 +323,14 @@
   .book-cat {
     font-family: var(--font-utility); font-size: 11px; font-weight: 700;
     letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--gold-bright); margin-bottom: 4px;
+    color: rgba(255,255,255,0.55); margin-bottom: 4px;
   }
+  .book-cat--soon {
+    color: var(--gold-bright);
+    text-shadow: 0 0 12px rgba(212,162,62,0.4);
+  }
+  .section--light .book-cat,
+  .section--light-alt .book-cat { color: var(--ink-3); }
   .section--dark .book-blurb { color: rgba(255,255,255,0.72);}
   .book-blurb {
     font-family: var(--font-body); font-size: 15px; line-height: 1.45;
@@ -633,20 +663,18 @@
 <!-- ============================== 1. PROMO STRIP ============================== -->
 <div class="promo">
   <div class="promo-inner">
-    <b>NEW:</b> The Emerald Door — Volume I, coming 2026
-    <a href="#books">READ MORE →</a>
+    <b>NEW:</b> The Emerald Door. Available now.
+    <a href="https://www.amazon.com/dp/B0EMERALDDOOR" target="_blank" rel="noopener">READ MORE →</a>
   </div>
 </div>
 
 <!-- ============================== 2. NAV ============================== -->
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-mark" href="#">
-      <span class="nav-mark-glyph">N</span>
-      NATHAN ESSEX
+    <a class="nav-mark" href="#" aria-label="Nathan Essex — home">
+      <span class="nav-mark-glyph">E</span>
     </a>
     <div class="nav-links">
-      <a class="nav-link" href="#about">About</a>
       <a class="nav-link active" href="#books">Books</a>
       <a class="nav-link" href="#newsletter">Newsletter</a>
       <a class="nav-link" href="#podcast">Podcast</a>
@@ -655,9 +683,9 @@
     </div>
     <div class="nav-social">
       <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.55V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
-      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.12-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.52A3 3 0 00.5 6.2C0 8.07 0 12 0 12s0 3.93.5 5.8a3 3 0 002.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52A3 3 0 0023.5 17.8c.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
       <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 01-1.38-.9 3.71 3.71 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 00-2.13 1.38A5.87 5.87 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.87 5.87 0 001.38 2.13 5.87 5.87 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 002.13-1.38 5.87 5.87 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 00-1.38-2.13A5.87 5.87 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-11.85a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg></a>
+      <a href="https://householdmojo.substack.com" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
     </div>
   </div>
 </nav>
@@ -666,21 +694,25 @@
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-eyebrow">Author · Strategist · Inventor</div>
-      <h1 class="hero-title">Stories &amp;<br>Instruments</h1>
+      <div class="hero-eyebrow">Nathan Essex</div>
+      <h1 class="hero-title">Stories &amp;<br>Inventions</h1>
       <p class="hero-sub">
-        Fiction <span class="sep">|</span> Strategy
-        <span class="sep">|</span> Science <span class="sep">|</span> Service
+        Author <span class="sep">|</span> Strategist <span class="sep">|</span> Inventor
       </p>
-      <a class="hero-cta" href="#books">Read the new book →</a>
+      <a class="hero-cta" href="#projects">Join the Wait List →</a>
     </div>
 
     <div class="hero-feature">
-      <div class="hero-feature-tag">New &middot; Featured Release</div>
-      <div class="hero-feature-cover" style="background-image: url('assets/publishing/emerald_door_cover.png');"></div>
+      <div class="hero-feature-tag">Featured App &middot; In Development</div>
+      <div class="hero-feature-cover hero-feature-app">
+        <div class="hero-app-mark">
+          EXERCISE
+          <small>Train Courage</small>
+        </div>
+      </div>
       <div class="hero-feature-meta">
-        <strong>The Emerald Door</strong>
-        Volume I &middot; 2026
+        <strong>Exercise</strong>
+        Beat anxiety. Build courage.
       </div>
     </div>
   </div>
@@ -698,108 +730,52 @@
       </p>
     </header>
 
-    <!-- Featured project: Exorcise -->
-    <a class="featured-project" href="#" aria-label="Exorcise — courage builder app">
+    <!-- Featured project: Exercise -->
+    <a class="featured-project" href="#" aria-label="Exercise — courage builder app">
       <div class="featured-project-art">
         <div class="featured-project-mark">
-          EX<span>·</span>OR<br>CISE
+          EXER<br>CISE
           <small>Courage Builder · App</small>
         </div>
       </div>
       <div class="featured-project-text">
         <div class="featured-eyebrow">Featured Project</div>
-        <h3 class="featured-title">Exorcise</h3>
+        <h3 class="featured-title">Exercise</h3>
         <div class="featured-tag">A courage builder for the anxious.</div>
         <p>
           A training app that combines neuroscience and sport psychology to help users
           overcome anxiety — drilling the same skills elite athletes use to perform under
           pressure, applied to everyday life.
         </p>
-        <span class="featured-cta">Learn more →</span>
+        <span class="featured-cta">Join the Wait List →</span>
       </div>
     </a>
 
-    <!-- Supporting projects -->
-    <div class="work-grid work-grid--three">
-      <article class="work-card">
-        <div class="work-cover">
-          <div class="work-cover-inner">
-            <div class="work-cover-id">Banking · B2B</div>
-            <div>
-              <h3 class="work-cover-name">Pricing<br>Recovery</h3>
-              <div class="work-cover-rule"></div>
-              <div class="work-cover-stat">$10M<small>Recovered Margin</small></div>
-            </div>
-            <div class="work-cover-id">2025</div>
-          </div>
-        </div>
-        <div class="work-meta">
-          <div class="work-cat">Pricing &amp; Credit</div>
-          <p class="work-blurb">A two-quarter restructure that held the floor.</p>
-        </div>
-      </article>
-
-      <article class="work-card">
-        <div class="work-cover">
-          <div class="work-cover-inner">
-            <div class="work-cover-id">AI · Internal</div>
-            <div>
-              <h3 class="work-cover-name">AI Studio<br>OS</h3>
-              <div class="work-cover-rule"></div>
-              <div class="work-cover-stat">60+<small>Skills Shipped</small></div>
-            </div>
-            <div class="work-cover-id">2026</div>
-          </div>
-        </div>
-        <div class="work-meta">
-          <div class="work-cat">AI Systems</div>
-          <p class="work-blurb">A working studio operating system, in production.</p>
-        </div>
-      </article>
-
-      <article class="work-card">
-        <div class="work-cover">
-          <div class="work-cover-inner">
-            <div class="work-cover-id">Tableau · DAX</div>
-            <div>
-              <h3 class="work-cover-name">Sales<br>Dashboard</h3>
-              <div class="work-cover-rule"></div>
-              <div class="work-cover-stat">1<small>Source Of Truth</small></div>
-            </div>
-            <div class="work-cover-id">2024</div>
-          </div>
-        </div>
-        <div class="work-meta">
-          <div class="work-cat">Sales Ops</div>
-          <p class="work-blurb">A governed pipeline the team opens on Mondays.</p>
-        </div>
-      </article>
-    </div>
-
     <div class="center" style="margin-top: 16px;">
-      <a class="btn-outline" href="#">View All Projects →</a>
+      <a class="btn-outline" href="#">View Case Studies →</a>
     </div>
   </div>
 </section>
 
-<!-- ============================== VOODAD — Podcast (DARK) ============================== -->
+<!-- ============================== EXERCISE WITH VOODAD — Podcast (DARK) ============================== -->
 <section class="section section--dark" id="podcast">
   <div class="container">
     <div class="voodad-grid">
       <div class="voodad-art">
         <div class="voodad-art-mark">
-          VOO<br>DAD
-          <small>The Podcast</small>
+          EXER<br>CISE
+          <small>with Voodad</small>
         </div>
       </div>
       <div class="voodad-text">
-        <div class="hero-eyebrow" style="margin-bottom: 16px;">Podcast · The Workshop</div>
-        <h3>Voodad</h3>
-        <div class="tag">Long conversations with builders, operators, and tinkerers.</div>
+        <div class="hero-eyebrow" style="margin-bottom: 16px;">Podcast</div>
+        <h3>Exercise with Voodad</h3>
+        <div class="tag">Train courage. One conversation at a time.</div>
         <p>
-          A weekly show about the work itself — the unsexy middle of building things,
-          and the occasional screen-share teardown. New episodes on YouTube and your
-          podcast app of choice.
+          <!-- TODO: Replace with the exact Substack page copy. -->
+          The companion show to the Exercise app. Each episode is a guided session in
+          building courage — interviews, teardowns, and live drills with the people who
+          have done the work themselves. New episodes drop on YouTube.
         </p>
         <a class="btn-outline btn-outline-light" href="#">Listen on YouTube →</a>
       </div>
@@ -842,18 +818,18 @@
     <div class="books-grid books-grid--three">
       <article class="book">
         <div class="book-cover" style="background-image: url('assets/publishing/emerald_door_cover.png');"></div>
-        <div class="book-cat">Novel · Published</div>
-        <p class="book-blurb">An afrofuturist epic in three movements.</p>
+        <div class="book-cat">Novel</div>
+        <p class="book-blurb">An aspirational portal fantasy.</p>
       </article>
       <article class="book">
         <div class="book-cover" style="background-image: url('assets/publishing/landlord_cover.jpeg');"></div>
-        <div class="book-cat">Novelette · Published</div>
-        <p class="book-blurb">An urban fable about deeds and doors that don't lock.</p>
+        <div class="book-cat">Novelette</div>
+        <p class="book-blurb">An afrofuturism space opera.</p>
       </article>
       <article class="book">
         <div class="book-cover" style="background-image: url('assets/publishing/goat_cover.png');"></div>
-        <div class="book-cat">Novel · Coming Soon</div>
-        <p class="book-blurb">A pastoral about appetite and inheritance.</p>
+        <div class="book-cat book-cat--soon">Coming Soon</div>
+        <p class="book-blurb">An unwelcome encounter with Vikings.</p>
       </article>
     </div>
 
@@ -871,34 +847,34 @@
         <img src="assets/portrait/nathaniel_headshot.jpg" alt="Nathan Essex">
       </div>
       <div>
-        <div class="about-eyebrow">◈  About the Author</div>
-        <h2 class="about-title">Nathan Essex</h2>
+        <div class="about-eyebrow">◈  About</div>
+        <h2 class="about-title">Who is Nathan Essex</h2>
         <div class="about-body">
           <p>
-            I grew up between worlds — a kid who took apart radios in the garage and read
-            paperbacks under the covers, raised by people who believed curiosity was a kind
-            of inheritance. I never quite picked a lane, and I stopped trying.
+            <em>MBA, fintech strategist, author and inventor.</em>
           </p>
           <p>
-            For most of my career I've worked in the unglamorous middle of things — banking,
-            data, operations — the rooms where a quiet decision made on a Tuesday becomes
-            somebody's whole year. I learned to love that work. I also learned that the
-            same instinct that makes someone good at it, the patience to sit with a question
-            until it shows you its real shape, is the same instinct that lets you write a
-            novel, raise a family, or build something that lasts longer than the meeting
-            it was born in.
+            Raised by Caribbean Catholic military engineers, Nathan was the artist in
+            the family — the kid who came home with novels under his arm while everyone
+            else was building bridges. He kept the artist's instincts and added the
+            engineer's discipline.
           </p>
           <p>
-            These days the practice spans a few rooms. I write fiction in the early
-            mornings — long books with maps in the front. I work with operators on the
-            problems no one wants to put in a slide. And at home I'm a husband and a
-            father, which is, by a wide margin, the most interesting design problem I've
-            been handed.
+            Ten-plus years in corporate finance followed: inside major international
+            logistics companies and on the founding side of startups that grew into
+            full enterprises. He has built businesses from scratch and helped others
+            scale theirs, working in the rooms where strategy and operations actually
+            meet.
           </p>
           <p>
-            Everything you'll find here is downstream of that. <em>Stories on one side,
-            instruments on the other</em>, and a working belief that the through-line
-            between them matters.
+            He is, by his own admission, a Renaissance man — orchestral musician,
+            family man, novelist, builder. His core strength is <em>far transfer</em>:
+            taking a pattern from one domain and applying it cleanly in another, across
+            disciplines that rarely speak to each other.
+          </p>
+          <p>
+            What ties it together is service. The work is the work, and the point of
+            the work is to be a useful citizen.
           </p>
           <div class="about-sign">— Nathan</div>
         </div>
@@ -922,15 +898,14 @@
         </p>
         <div class="footer-social">
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67h-3.55V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.12-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.52A3 3 0 00.5 6.2C0 8.07 0 12 0 12s0 3.93.5 5.8a3 3 0 002.12 2.13c1.88.52 9.38.52 9.38.52s7.5 0 9.38-.52A3 3 0 0023.5 17.8c.5-1.87.5-5.8.5-5.8s0-3.93-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 01-1.38-.9 3.71 3.71 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 00-2.13 1.38A5.87 5.87 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.87 5.87 0 001.38 2.13 5.87 5.87 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 002.13-1.38 5.87 5.87 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 00-1.38-2.13A5.87 5.87 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-11.85a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg></a>
+          <a href="https://householdmojo.substack.com" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
         </div>
       </div>
       <div>
         <h5>Site</h5>
         <ul class="footer-list">
-          <li><a href="#about">About</a></li>
           <li><a href="#books">Books</a></li>
           <li><a href="#newsletter">Newsletter</a></li>
           <li><a href="#podcast">Podcast</a></li>
@@ -951,8 +926,6 @@
         <ul class="footer-list">
           <li><a href="#">Sufficiently Advanced</a></li>
           <li><a href="https://householdmojo.substack.com">Household Mojo</a></li>
-          <li><a href="#">Voodad</a></li>
-          <li><a href="#" id="shop">The Shop</a></li>
         </ul>
       </div>
     </div>
