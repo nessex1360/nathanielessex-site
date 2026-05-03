@@ -720,18 +720,196 @@
   .footer-social a:hover { color: var(--ink); background: var(--gold-bright); border-color: var(--gold-bright);}
   .footer-social svg { width: 16px; height: 16px;}
 
+  /* ============= MOBILE NAV — hamburger ==================== */
+  .nav-toggle { display: none;}
+  .nav-burger {
+    display: none;
+    width: 40px; height: 40px;
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+    cursor: pointer;
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 5px;
+  }
+  .nav-burger span {
+    display: block; width: 18px; height: 2px;
+    background: var(--ink);
+    transition: transform 200ms, opacity 200ms;
+  }
+
   /* ============= RESPONSIVE =============================== */
   @media (max-width: 1024px) {
     .nav-links { gap: 18px;}
     .nav-link { font-size: 11px; letter-spacing: 0.12em;}
   }
+
+  /* ----- Tablet & smaller ----- */
   @media (max-width: 880px) {
-    .hero-grid { grid-template-columns: 1fr; padding: 64px 0;}
-    .hero-feature { justify-self: center; max-width: 280px;}
-    .work-grid, .books-grid, .books-grid--three { grid-template-columns: repeat(2, 1fr);}
-    .about-grid, .voodad-grid { grid-template-columns: 1fr;}
-    .footer-grid { grid-template-columns: 1fr 1fr;}
-    .nav-links { display: none;}
+    .container { padding: 0 24px;}
+    .section { padding: 72px 0;}
+
+    /* Nav: collapse to hamburger */
+    .nav-inner { grid-template-columns: auto 1fr auto; gap: 16px;}
+    .nav-burger { display: inline-flex; justify-self: end;}
+    .nav-social { gap: 10px;}
+    .nav-social a { width: 32px; height: 32px;}
+    .nav-social svg { width: 18px; height: 18px;}
+
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: #fff;
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 12px 30px rgba(16,38,61,0.10);
+      max-height: 0; overflow: hidden;
+      transition: max-height 280ms ease;
+    }
+    .nav-toggle:checked ~ .nav-inner .nav-links {
+      max-height: 480px;
+    }
+    .nav-link {
+      padding: 14px 32px;
+      font-size: 13px; letter-spacing: 0.18em;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-link:last-child { border-bottom: none;}
+    .nav-link.active { border-bottom-color: var(--rule);}
+    .nav { position: relative;}
+
+    /* Hero: stack, breathing */
+    .hero { min-height: auto;}
+    .hero-grid {
+      grid-template-columns: 1fr;
+      padding: 56px 0 64px;
+      gap: 48px;
+      text-align: center;
+    }
+    .hero-eyebrow { letter-spacing: 0.24em;}
+    .hero-title { font-size: clamp(40px, 11vw, 64px); line-height: 1.04;}
+    .hero-sub { font-size: 12px; letter-spacing: 0.18em;}
+    .hero-feature {
+      justify-self: center;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .hero-feature-tag { letter-spacing: 0.24em;}
+
+    /* Promo strip */
+    .promo { padding: 14px 16px;}
+    .promo-inner { font-size: 12px; line-height: 1.5;}
+    .promo-inner a {
+      display: inline-block;
+      margin-top: 8px; margin-left: 0;
+    }
+
+    /* Section heads */
+    .section-name { font-size: clamp(40px, 9vw, 56px); line-height: 1.05;}
+    .section-tagline { font-size: 18px; letter-spacing: 0.08em;}
+    .section-lede { font-size: 16px; line-height: 1.6;}
+    .section-head { margin-bottom: 40px;}
+
+    /* Featured project */
+    .featured-project {
+      grid-template-columns: 1fr;
+      gap: 24px; padding: 20px;
+      text-align: left;
+    }
+    .featured-project-art { aspect-ratio: 16/10;}
+    .featured-title { font-size: clamp(34px, 7vw, 44px);}
+    .featured-tag { font-size: 17px;}
+    .featured-project-text p { font-size: 16px;}
+
+    /* Supporting projects (if ever shown) */
+    .work-grid, .work-grid--three { grid-template-columns: 1fr; gap: 24px;}
+    .work-cover { aspect-ratio: 4/5;}
+
+    /* Voodad podcast */
+    .voodad-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 480px;
+    }
+    .voodad-art { max-width: 360px; margin: 0 auto;}
+    .voodad-text h3 { font-size: clamp(32px, 7vw, 44px);}
+    .voodad-text .tag { font-size: 17px;}
+    .voodad-text p { font-size: 16px;}
+
+    /* Newsletter card */
+    .news-card { padding: 40px 28px;}
+    .news-title { font-size: clamp(36px, 9vw, 52px);}
+    .news-tag { font-size: 18px;}
+    .news-body { font-size: 16px;}
+
+    /* Books — 2up at tablet, 1up at phone */
+    .books-grid, .books-grid--three { grid-template-columns: repeat(2, 1fr); gap: 28px;}
+
+    /* About */
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-photo {
+      max-width: 360px; margin: 0 auto;
+      aspect-ratio: 4/5;
+    }
+    .about-title {
+      font-size: clamp(24px, 5.5vw, 30px);
+      white-space: normal;
+      text-align: left;
+    }
+    .about-quote em { font-size: 18px;}
+    .about-body p { font-size: 17px; line-height: 1.65;}
+    .about-body p:first-of-type::first-letter {
+      font-size: 3.6em;
+    }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px;}
+    .footer-grid > div:first-child {
+      grid-column: 1 / -1;
+    }
+    .footer-mark { font-size: 24px;}
+    .footer-bottom { font-size: 10px;}
+  }
+
+  /* ----- Phone ----- */
+  @media (max-width: 540px) {
+    .container { padding: 0 20px;}
+    .section { padding: 64px 0;}
+
+    .nav-inner { height: 64px; padding: 0 20px;}
+    .nav-mark { font-size: 18px; letter-spacing: 0.10em;}
+    .nav-mark-glyph { width: 28px; height: 28px; font-size: 15px;}
+    .nav-social { gap: 6px;}
+    .nav-social a { width: 30px; height: 30px;}
+    .nav-social svg { width: 15px; height: 15px;}
+
+    /* Hide one or two of the social icons on the smallest screens
+       to avoid overflow with hamburger + 5 icons + wordmark */
+    .nav-social a:nth-child(4),
+    .nav-social a:nth-child(5) { display: none;}
+
+    .hero-grid { padding: 48px 0 56px; gap: 40px;}
+    .hero-title { font-size: clamp(36px, 12vw, 56px);}
+
+    /* Books: 1 column */
+    .books-grid, .books-grid--three {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      max-width: 320px; margin-left: auto; margin-right: auto;
+    }
+
+    /* Featured project art a touch shorter */
+    .featured-project { padding: 16px;}
+    .featured-project-art { aspect-ratio: 4/3;}
+
+    /* Footer columns stack */
+    .footer-grid { grid-template-columns: 1fr; gap: 32px;}
+    .footer-grid > div:first-child { grid-column: 1;}
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px;}
   }
 </style>
 </head>
@@ -748,11 +926,15 @@
 
 <!-- ============================== 2. NAV ============================== -->
 <nav class="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation">
   <div class="nav-inner">
     <a class="nav-mark" href="#">
       <span class="nav-mark-glyph">E</span>
       NATHAN ESSEX
     </a>
+    <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
     <div class="nav-links">
       <a class="nav-link" href="#top">Home</a>
       <a class="nav-link" href="#newsletter">Newsletter</a>
