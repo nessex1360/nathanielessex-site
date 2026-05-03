@@ -759,14 +759,17 @@
       background: #fff;
       flex-direction: column;
       gap: 0;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--rule);
-      box-shadow: 0 12px 30px rgba(16,38,61,0.10);
+      padding: 0;
+      border-bottom: 0;
+      box-shadow: none;
       max-height: 0; overflow: hidden;
-      transition: max-height 280ms ease;
+      transition: max-height 280ms ease, padding 280ms ease;
     }
     .nav-toggle:checked ~ .nav-inner .nav-links {
       max-height: 480px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 12px 30px rgba(16,38,61,0.10);
     }
     .nav-link {
       padding: 14px 32px;
