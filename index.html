@@ -748,12 +748,10 @@
     .container { padding: 0 24px;}
     .section { padding: 72px 0;}
 
-    /* Nav: collapse to hamburger */
-    .nav-inner { grid-template-columns: auto 1fr auto; gap: 16px;}
+    /* Nav: wordmark across, hamburger on the right, social hidden */
+    .nav-inner { grid-template-columns: 1fr auto; gap: 16px;}
     .nav-burger { display: inline-flex; justify-self: end;}
-    .nav-social { gap: 10px;}
-    .nav-social a { width: 32px; height: 32px;}
-    .nav-social svg { width: 18px; height: 18px;}
+    .nav-social { display: none;}
 
     .nav-links {
       position: absolute;
@@ -883,14 +881,6 @@
     .nav-inner { height: 64px; padding: 0 20px;}
     .nav-mark { font-size: 18px; letter-spacing: 0.10em;}
     .nav-mark-glyph { width: 28px; height: 28px; font-size: 15px;}
-    .nav-social { gap: 6px;}
-    .nav-social a { width: 30px; height: 30px;}
-    .nav-social svg { width: 15px; height: 15px;}
-
-    /* Hide one or two of the social icons on the smallest screens
-       to avoid overflow with hamburger + 5 icons + wordmark */
-    .nav-social a:nth-child(4),
-    .nav-social a:nth-child(5) { display: none;}
 
     .hero-grid { padding: 48px 0 56px; gap: 40px;}
     .hero-title { font-size: clamp(36px, 12vw, 56px);}
